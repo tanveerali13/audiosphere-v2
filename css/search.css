@@ -1,0 +1,313 @@
+/* RESET */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/*
+  9. Remove default button styles
+*/
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* VARIABLES */
+:root {
+    /* colors */
+    --primary_color_dark: #7357C7;
+    --secondary_color_dark: #365E4E;
+    --accent_color_dark: #41716A;
+    --text_color_dark: #F4F8F2;
+    --bg_color_dark: #050604;
+
+    --primary_color_light: #5438A8;
+    --secondary_color_light: #A1C9B9;
+    --accent_color_light: #8EBEB7;
+    --text_color_light: #090D07;
+    --bg_color_light: #FAFBF9;
+
+
+    /* heading font-size */
+    --min-heading-font-size: 1.5rem;
+    --preferred-heading-font-size: 2.5vw;
+    --max-heading-font-size: 2rem;
+
+    /* paragraph font-size */
+    --min-text-font-size: 0.875rem;
+    --preferred-text-font-size: 1.5vw;
+    --max-text-font-size: 1.125rem;
+
+
+    /* medium heading font-size */
+    --min-font-size: 1rem;
+    --preferred-font-size: 2vw;
+    --max-font-size: 1.5rem;
+
+    /* spacing */
+    --padding_xsmall: 0.25em;
+    --padding_small: 0.5em;
+    --padding_medium: 1em;
+    --padding_large: 1.5em;
+    --padding_xlarge: 2em;
+
+    --margin_small: 0.5em;
+    --margin_medium: 1em;
+    --margin_large: 1.5em;
+    --margin_xlarge: 2em;
+    --margin_base: 1em;
+
+    --gap_small: 0.5em;
+    --gap_medium: 1em;
+    --gap_large: 1.5em;
+    --gap_xlarge: 2em;
+
+    --grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+body {
+    background-color: var(--bg_color_light);
+}
+
+button {
+    background-color: var(--primary_color_dark);
+    color: var(--text_color_dark);
+    padding: var(--padding_xsmall) var(--padding_medium) var(--padding_xsmall) var(--padding_medium);
+    border-radius: 8px;
+    font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+button:hover {
+    background-color: var(--secondary_color_dark);
+}
+
+.main {
+    height: 100vh;
+    padding: var(--padding_medium);
+}
+
+/*input {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    padding: var(--padding_medium);
+    font-size: var(--preferred-font-size);
+    margin-bottom: var(--margin_medium);
+} */
+
+/* SEARCH BOX */
+.search-box {
+    width: 100%;
+    background: #fff;
+    margin: 40px auto 0;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.input-box {
+    flex: 1;
+    background: transparent;
+    outline: 0;
+    border: 0;
+    color: #333;
+    height: 25px;
+    font-size: 16px;
+}
+
+.search-button {
+    background: none;
+    color: black;
+    outline: 0;
+    border: 0;
+}
+
+::placeholder {
+    color: #9c9c9c;
+    font-size: 16px;
+}
+
+.result-box ul {
+    border-top: 1px solid #999;
+    padding: 15px 10px;
+}
+
+.result-box ul li {
+    font-family: 'Quicksand', sans-serif;
+    list-style: none;
+    border-radius: 3px;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.result-box ul li:hover {
+    background-color: #e9f3ff;
+}
+
+.result-box {
+    background: black;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: scroll;
+    position: absolute;
+    z-index: 1;
+}
+
+/*SEARCH END*/
+
+
+.category_list_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: var(--gap_medium);
+    margin-bottom: var(--margin_medium);
+}
+
+.card {
+    border-radius: 10px;
+    padding: var(--padding_medium);
+    background-color: var(--bg_color_dark);
+    color: var(--text_color_dark);
+    font-size: var(--preferred-font-size);
+    margin-bottom: var(--margin_medium);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap_medium);
+    transition: all 0.3s ease;
+}
+
+
+h4 {
+    margin-top: var(--margin_medium);
+    padding: var(--padding_small);
+    align-self: flex-end;
+    font-size: clamp(var(--min-heading-font-size), var(--preferred-heading-font-size), var(--max-heading-font-size));
+    color: var(--text_color_dark);
+    text-transform: capitalize;
+}
+
+/* Dark mode styles */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode .text,
+body.dark-mode a {
+    color: var(--text_color_dark);
+}
+
+body.dark-mode .card {
+    background-color: var(--accent_color_light);
+    color: var(--text_color_light);
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 768px) {
+    .card:hover {
+        background-color: var(--primary_color_dark);
+        cursor: pointer;
+    }
+
+    .search-box {
+        width: 600px;
+    }
+
+    .input-box {
+        font-size: 20px;
+    }
+
+    ::placeholder {
+        font-size: 20px;
+    }
+
+    .result-box ul li {
+        font-size: 20px;
+    }
+
+    .result-box {
+        min-width: 600px;
+    }
+}

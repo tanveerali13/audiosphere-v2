@@ -42,7 +42,9 @@ class SearchModel {
     {   
         $this->connect();
         if ($this->conn) {
+            $results = [];
             $result = $this->conn->query("SELECT * FROM audioCategories");
+
             while ($row = $result->fetch_assoc()) {
                 $results[] = $row;
             }

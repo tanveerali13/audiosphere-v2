@@ -9,8 +9,19 @@ $lists = new AudioListModel();
 
 if(isset($_GET['category'])){
     $categoryID = $_GET['category'];
-    $lists->selectAudios($categoryID);
-    include __DIR__ . '/../views/view-audiolist.php';
+    $audioList = $lists->selectAudios($categoryID);
+    var_dump($audioList);
+    // Check if $audioList is empty and handle accordingly
+    if ($audioList === false) {
+        // Handle database connection error
+        echo "Error connecting to the database.";
+    } elseif (empty($audioList)) {
+        // Handle case when no audio is found for the given category
+        echo "No audio found for the selected category.";
+    } else {
+        // Include the view file with $audioList
+        include __DIR__ . '/../views/view-audiolist.php';
+    }
 }
 
 ?>

@@ -10,15 +10,22 @@ class AudioListModel {
     }
 
     public function selectAudios($categoryID) {
+       
         $this->connect();
         if ($this->conn) {
+            $results = [];
             $result = $this->conn->query("SELECT * FROM audios
-                                          WHERE audioCategoryID = $categoryID");
+                                          NATURAL JOIN audioCategories 
+                                          WHERE audioCategoryID = '$categoryID'");
+                                          
             while ($row = $result->fetch_assoc()) {
+                //var_dump($row);
                 $results[] = $row;
+
             }
             $this->conn->close();
             return $results;
+            //return true;
         } else {
             return false;
         }

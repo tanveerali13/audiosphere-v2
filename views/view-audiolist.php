@@ -1,13 +1,13 @@
 <?php
-include 'view-header.php';
+include_once 'view-header.php';
 
-include __DIR__ . '/../controllers/controller-audiolist.php';
+include_once __DIR__ . '/../controllers/controller-audiolist.php';
 ?>
 
 <section class="audio_list_container">
 <?php
 
-    foreach ($lists as $list) {
+    foreach ($audioList as $list) {
         echo '<article class="card">';
         echo '<figure>';
         echo '<img src="' . $list['audioThumb'] . '" alt="' . $list['audioTitle'] . '">';
@@ -23,8 +23,7 @@ include __DIR__ . '/../controllers/controller-audiolist.php';
         echo '<p>' . $list['audioDesc'] . '</p>';
         echo '</div>';
         echo '<div class="card_footer">';
-        echo '<p>' . $list['genre'] . '</p>';
-        echo '<p>' . $list['release_date'] . '</p>';
+        echo '<p>' . $list['audioCategory'] . '</p>';
         echo '</div>';
         echo '</div>';
         echo '</article>';

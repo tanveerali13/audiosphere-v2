@@ -82,20 +82,46 @@ button {
     cursor: pointer;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 /* VARIABLES */
 :root {
     /* colors */
-    --primary_color_dark: #7357C7;
-    --secondary_color_dark: #365E4E;
-    --accent_color_dark: #41716A;
-    --text_color_dark: #F4F8F2;
-    --bg_color_dark: #050604;
+    --background-color-dark_mode: #232946;
+    --headline-color-dark_mode: #fffffe;
+    --paragraph-color-dark_mode: #b8c1ec;
+    --button-color-dark_mode: #eebbc3;
+    --button-text-color-dark_mode: #232946;
+    --link-color-dark_mode: ;
 
-    --primary_color_light: #5438A8;
-    --secondary_color_light: #A1C9B9;
-    --accent_color_light: #8EBEB7;
-    --text_color_light: #090D07;
-    --bg_color_light: #FAFBF9;
+
+    --stroke-color-dark_mode: #121629;
+    --main-color-dark_mode: #b8c1ec;
+    --highlight-color-dark_mode: #eebbc3;
+    --primary-color-dark_mode: #fffffe;
+    --secondary-color-dark_mode: #eebbc3;
+
+
+    --background-color: #d4d8f0;
+    --headline-color: #232946;
+    --paragraph-color: #232946;
+    --card-background-color: #fffffe;
+    --button-color: #eebbc3;
+    --button-text-color: #232946;
+    --link-color: #232946;
+
+
+    --stroke-color: #121629;
+    --main-color: #b8c1ec;
+    --highlight-color: #eebbc3;
+    --primary-color: #fffffe;
+    --secondary-color: #eebbc3;
 
 
     /* heading font-size */
@@ -132,7 +158,6 @@ button {
     --gap_large: 1.5em;
     --gap_xlarge: 2em;
 
-    --grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
 body {
@@ -140,8 +165,8 @@ body {
 }
 
 button {
-    background-color: var(--primary_color_dark);
-    color: var(--text_color_dark);
+    background-color: var(--headline-color);
+    color: var(--paragraph-color-dark_mode);
     padding: var(--padding_xsmall) var(--padding_medium) var(--padding_xsmall) var(--padding_medium);
     border-radius: 8px;
     font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
@@ -249,14 +274,16 @@ button:hover {
     color: var(--text_color_dark);
     font-size: var(--preferred-font-size);
     margin-bottom: var(--margin_medium);
-
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     gap: var(--gap_medium);
     transition: all 0.3s ease;
 }
 
+.card figure {
+    width: 100px;
+}
 
 h4 {
     margin-top: var(--margin_medium);

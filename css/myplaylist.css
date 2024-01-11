@@ -109,6 +109,8 @@ h4 {
     font-size: clamp(var(--min-font-size), var(--preferred-font-size), var(--max-font-size));
     color: #52C7B5;
     margin-bottom: var(--margin_small);
+    margin-top: 0;
+    padding: 0;
 }
 
 h5 {
@@ -142,7 +144,7 @@ button {
     box-shadow: var(--box-shadow);
 }
 
-.btn {
+.playlist .btn {
     margin: var(--margin_small);
     padding: var(--padding_small) var(--padding_large);
     border-radius: 6px;
@@ -151,11 +153,11 @@ button {
     transition: var(--transition);
 }
 
-.btn:hover {
+.playlist .btn:hover {
     background-color: var(--secondary_color_light);
 }
 
-.btn-wrapper{
+.playlist .btn-wrapper{
     justify-self: end;
 }
 
@@ -177,7 +179,7 @@ button {
 
 /* MY PLAYLIST */
 .playlist {
-    margin-bottom: var(--gap_xlarge);
+    margin-bottom: 5em;
 }
 
 .playlist h3 {
@@ -484,12 +486,16 @@ button {
         margin-left: 6.5rem;
     }
 
-    .playlist-box figure {
-        width: 12vw;
-    }
-
     .profile-wrapper figure {
         width: 25vw;
+    }
+
+    .playlist {
+        margin-bottom: 0;
+    }
+
+    .playlist-box figure {
+        width: 12vw;
     }
 
     .display {

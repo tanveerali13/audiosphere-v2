@@ -11,7 +11,6 @@ inputBox.addEventListener("input", function () {
     }
 });
 
-
 async function searchAudio(keyword) {
     try {
         const response = await fetch('audioTitles.json');
@@ -19,21 +18,20 @@ async function searchAudio(keyword) {
             throw new Error(`Network response was not ok: ${response.statusText}`);
         }
         const data = await response.json();
-        const result = data.filter(audioTitle => audioTitle.toLowerCase().includes(keyword.toLowerCase()));
+        const result = data.filter(audio => audio.audioTitle.toLowerCase().includes(keyword.toLowerCase()));
         display(result);
     } catch (error) {
         console.error('Error during fetch operation:', error);
     }
 }
 
-
 function display(result) {
-    const content = result.map(audioTitle => {
-        return `<li onclick="selectInput('${audioTitle}')">${audioTitle}</li>`;
+    const content = result.map(audio => {
+        return `<li onclick="selectInput(${audio.ID})">${audio.audioTitle}</li>`;
     });
     resultsBox.innerHTML = `<ul>${content.join('')}</ul>`;
 }
 
-function selectInput(selectedAudio) {
-    window.location.href = `view-upload.php?audioTitle=${selectedAudio}`;
+function selectInput(selectedAudioId) {
+    window.location.href = `view-upload.php?audioId=${selectedAudioId}`;
 }

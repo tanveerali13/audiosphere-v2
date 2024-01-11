@@ -43,7 +43,7 @@ include __DIR__ . '/../controllers/controller-upload.php';
                 <h2>Thumbnail</h2>
                 <p>Upload a picture that shows what’s your content is about. A good thumbnail stands out and draws listeners’ attention.</p>
                 <div id="thumbnailDropArea" onclick="document.getElementById('thumbnailInput').click()">
-                    <input type="file" id="thumbnailInput" name="audioThumb" accept="image/*" style="display: none;" onchange="displayThumbnail()">
+                    <input type="file" id="thumbnailInput" name="audioThumb" accept="image/*" style="display: none;" onchange="displayThumbnail()" required>
                     <img id="thumbnailPreview" src="../assets/images/upload.png" alt="Thumbnail Preview">
                 </div>
             </div>

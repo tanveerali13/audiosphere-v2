@@ -12,31 +12,36 @@ class SearchModel {
     public function selectAudioTitles() {
         $this->connect();
         if ($this->conn) {
-            $result = $this->conn->query("SELECT audioTitle FROM audios");
+            $result = $this->conn->query("SELECT ID, audioTitle FROM audios");
             if ($result->num_rows > 0) {
-                $audioTitles = array();
-            
+                $audioData = array();
+    
                 while ($row = $result->fetch_assoc()) {
-                    $audioTitles[] = $row['audioTitle'];
+                    $audioData[] = array(
+                        'ID' => $row['ID'],
+                        'audioTitle' => $row['audioTitle']
+                    );
                 }
-            
+    
                 // Convert the array to JSON
-                $jsonResult = json_encode($audioTitles);
-            
+                $jsonResult = json_encode($audioData);
+    
                 // Output the JSON to a file
                 file_put_contents('audioTitles.json', $jsonResult);
-            
+    
                 //echo "Audio titles have been exported to audioTitles.json";
                 //echo $jsonResult;
             } else {
                 echo "No audio titles found.";
             }
-            
+    
             $this->conn->close();
         } else {
             return false;
         }
     }
+    
+    
 
     public function selectCategory()
     {   

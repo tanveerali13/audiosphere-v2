@@ -379,7 +379,7 @@ button {
 .slick-arrow {
     position: absolute;
     z-index: 1;
-    background-color: var(--primary_color_dark);
+    background-color: var(--button-color);
     width: 40px;
     height: 40px;
     font-size: 0;
@@ -390,7 +390,7 @@ button {
 }
 
 .slick-arrow:hover {
-    background: var(--button-color);
+    background: var(--primary-color);
 }
 
 .slick-arrow:before {
@@ -472,8 +472,8 @@ input:checked+.slider:before {
 
 /* Dark mode styles */
 body.dark-mode {
-    background-color: var(--bg_color_dark);
-    color: var(--text_color_dark);
+    background-color: var(--background-color-dark_mode);
+    color: var(--paragraph-color-dark_mode);
 }
 
 body.dark-mode h1,
@@ -484,8 +484,13 @@ body.dark-mode h5,
 body.dark-mode h6,
 body.dark-mode .text,
 body.dark-mode a {
-    color: var(--text_color_dark);
+    color: var(--paragraph-color-dark_mode);
 }
+
+/* body.dark-mode .card {
+    background-color: var(--card-background-color);
+    color: var(--button-text-color-dark_mode);
+} */
 
 /* DARK AND LIGHT MODE SLIDER ENDS */
 

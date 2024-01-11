@@ -14,39 +14,6 @@ function displayThumbnail() {
 }
 
 
-function uploadFile() {
-    var form = document.getElementById('uploadForm');
-    var fileInput = document.getElementById('audio');
-    var progressBar = document.getElementById('uploadProgress');
-    var statusDiv = document.getElementById('status');
-
-    var formData = new FormData(form);
-
-    var xhr = new XMLHttpRequest();
-
-    // Track progress
-    xhr.upload.addEventListener("progress", function(event) {
-        if (event.lengthComputable) {
-            var percentComplete = (event.loaded / event.total) * 100;
-            progressBar.value = percentComplete;
-            statusDiv.innerHTML = Math.round(percentComplete) + "% uploaded";
-        }
-    }, false);
-
-    // Handle completion
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            statusDiv.innerHTML = xhr.responseText;
-        } else {
-            statusDiv.innerHTML = 'Error uploading file.';
-        }
-    };
-
-    // Open and send the request
-    xhr.open("POST", "upload.php", true);
-    xhr.send(formData);
-}
-
 // console.log("script.js is loaded");
 
 const toggle = document.getElementById("modeToggle");

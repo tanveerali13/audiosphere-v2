@@ -14,7 +14,7 @@ ALTER TABLE `audioCategories` ADD `audioCategoryImage` VARCHAR(256) NOT NULL AFT
 --Lisst of categories
 INSERT INTO `audioCategories` (`audioCategoryID`, `audioCategory`) VALUES (NULL, 'Arts'), (NULL, 'Business and Finance'), (NULL, 'Comedy'), (NULL, 'Education'), (NULL, 'Fiction'), (NULL, 'Health and Wellness'), (NULL, 'History'), (NULL, 'Language Learning'), (NULL, 'Music'), (NULL, 'News and Politics'), (NULL, 'Parenting'), (NULL, 'Religion and Spirituality'), (NULL, 'Science'), (NULL, 'Self-Improvement'), (NULL, 'Society and Culture'), (NULL, 'Sports'), (NULL, 'Technology'), (NULL, 'Technology and Gaming'), (NULL, 'Travel'), (NULL, 'True Crime');
 
-INSERT INTO `audioCategories` (`audioCategoryID`, `audioCategory`) VALUES (NULL, 'Arts'), (NULL, 'Business'), (NULL, 'Education'), (NULL, 'Fiction'), (NULL, 'Well-being'), (NULL, 'History'), (NULL, 'Music'), (NULL, 'Science'), (NULL, 'Sports'), (NULL, 'Technology');
+INSERT INTO `audioCategories` (`audioCategoryID`, `audioCategory`) VALUES (NULL, 'Arts'), (NULL, 'Business'), (NULL, 'Education'), (NULL, 'Fiction'), (NULL, 'Wellbeing'), (NULL, 'History'), (NULL, 'Music'), (NULL, 'Science'), (NULL, 'Sports'), (NULL, 'Technology');
 
 
 --CONTRAINTS

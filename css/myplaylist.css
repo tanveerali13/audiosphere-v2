@@ -1,10 +1,93 @@
 /* RESET */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
 img,
 picture,
 video,
 canvas,
 svg {
     display: inline-block;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/*
+  9. Remove default button styles
+*/
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* VARIABLES */
@@ -124,11 +207,12 @@ h3 {
 }
 
 h4 {
-    font-size: clamp(var(--min-font-size), var(--preferred-font-size), var(--max-font-size));
+    font-size: .85rem;
     color: #52C7B5;
     margin-bottom: var(--margin_small);
     margin-top: 0;
     padding: 0;
+    align-self: center;
 }
 
 h5 {
@@ -213,12 +297,12 @@ button {
 
 .playlist-box {
     display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     column-gap: var(--gap_small);
     margin-bottom: var(--margin_medium);
     background-color: var(--primary_color_light);
-    padding: var(--padding_medium) var(--gap_large);
+    padding: var(--padding_medium);
     border-radius: 24px;
     box-shadow: var(--box-shadow);
 }
@@ -282,10 +366,12 @@ button {
     padding: 0;
     background-color: transparent;
     color: #C4FFE7;
+    box-shadow: none;
 }
 
 .playlist-box .icons a:hover {
     color: #a8d6c3;
+    background-color: transparent;
 }
 
 .playlist-box .icons a:nth-child(2) {
@@ -476,8 +562,15 @@ button {
 
 /* RESPONSIVE */
 @media screen and (min-width: 500px) {
+    h4 {
+        font-size: 1rem;
+    }
     .genre h5 {
         font-size: .75rem;
+    }
+
+    .playlist-box {
+        padding: var(--padding_medium) var(--padding_large);
     }
 
     .playlist-box .genre a {
@@ -513,7 +606,7 @@ button {
     }
 
     .playlist {
-        margin-bottom: 0;
+        margin-bottom: var(--margin_xlarge);
     }
 
     .playlist-box figure {
@@ -551,12 +644,20 @@ button {
 }
 
 @media screen and (min-width: 1000px) {
+    h4 {
+        font-size: 1.1rem;
+    }
+
     .playlist-box p {
         font-size: 1rem;
     }
 }
 
 @media screen and (min-width: 1200px) {
+    h4 {
+        font-size: 1.25rem;
+    }
+
     .profile-wrapper figure {
         width: 15vw;
     }
@@ -579,6 +680,10 @@ button {
 }
 
 @media screen and (min-width: 1400px) {
+    h4 {
+        font-size: 1.35rem;
+    }
+
     .profile-wrapper figure {
         width: 200px;
     }

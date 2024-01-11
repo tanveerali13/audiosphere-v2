@@ -11,8 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const audioTitle = document.querySelector('.audio-panel h4');
     const loginBtn = document.querySelector('.podcast button');
 
-    //loginBtn.innerHTML = 'log out';
-
     function audioPause() {
         playIcon.innerHTML = '<i class="fa-solid fa-circle-pause"></i>';
         audioPanel.classList.add('active');

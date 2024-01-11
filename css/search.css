@@ -165,8 +165,8 @@ body {
 }
 
 button {
-    background-color: var(--primary_color_dark);
-    color: var(--text_color_dark);
+    background-color: var(--headline-color);
+    color: var(--paragraph-color-dark_mode);
     padding: var(--padding_xsmall) var(--padding_medium) var(--padding_xsmall) var(--padding_medium);
     border-radius: 8px;
     font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));

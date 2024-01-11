@@ -463,7 +463,7 @@ button {
 }
 
 input:checked+.slider {
-    background-color: #C7BEE3;
+    background-color: var(--primary-color);
 }
 
 input:checked+.slider:before {
@@ -496,7 +496,6 @@ body.dark-mode a {
     height: 9.375rem;
     margin: var(--margin_small);
 }
-
 
 .image_container img {
     height: 9.375rem;

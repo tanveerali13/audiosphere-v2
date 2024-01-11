@@ -162,15 +162,15 @@ a {
 
 /* GENERAL */
 body {
-    background-color: var(--bg_color_light);
-    color: var(--text_color_light);
+    background-color: var(--background-color);
+    color: var(--paragraph-color);
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    /* transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out; */
 }
 
 main {
@@ -202,8 +202,8 @@ li {
 }
 
 button {
-    background-color: var(--primary_color_dark);
-    color: var(--text_color_dark);
+    background-color: var(--headline-color);
+    color: var(--paragraph-color-dark_mode);
     padding: var(--padding_xsmall) var(--padding_medium) var(--padding_xsmall) var(--padding_medium);
     border-radius: 8px;
     font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
@@ -527,6 +527,23 @@ body.dark-mode a {
 
 .image_container:hover .text-bg {
     opacity: 0.8;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* MEDIA QUERIES */

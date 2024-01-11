@@ -281,12 +281,12 @@ button {
 }
 
 #sidebar li a {
-    color: var(--text_color_dark);
+    color: var(--paragraph-color);
     transition: all 0.3s ease;
 }
 
 #sidebar li a:hover {
-    color: var(--accent_color_dark);
+    color: var(--highlight-color);
 }
 
 #sidebar .close_icon {

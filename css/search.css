@@ -274,14 +274,16 @@ button:hover {
     color: var(--text_color_dark);
     font-size: var(--preferred-font-size);
     margin-bottom: var(--margin_medium);
-
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     gap: var(--gap_medium);
     transition: all 0.3s ease;
 }
 
+.card figure {
+    width: 100px;
+}
 
 h4 {
     margin-top: var(--margin_medium);

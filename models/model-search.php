@@ -26,8 +26,8 @@ class SearchModel {
                 // Output the JSON to a file
                 file_put_contents('audioTitles.json', $jsonResult);
             
-                echo "Audio titles have been exported to audioTitles.json";
-                echo $jsonResult;
+                //echo "Audio titles have been exported to audioTitles.json";
+                //echo $jsonResult;
             } else {
                 echo "No audio titles found.";
             }

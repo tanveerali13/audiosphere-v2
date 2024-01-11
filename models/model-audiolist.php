@@ -14,9 +14,10 @@ class AudioListModel {
         $this->connect();
         if ($this->conn) {
             $results = [];
-            $result = $this->conn->query("SELECT * FROM audios
-                                          NATURAL JOIN audioCategories 
-                                          WHERE audioCategoryID = '$categoryID'");
+            $result = $this->conn->query("SELECT audios.*, audioCategories.audioCategory
+                              FROM audios
+                              NATURAL JOIN audioCategories 
+                              WHERE audios.audioCategoryID = '$categoryID'");
                                           
             while ($row = $result->fetch_assoc()) {
                 //var_dump($row);

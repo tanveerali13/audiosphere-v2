@@ -10,17 +10,35 @@ svg {
 /* VARIABLES */
 :root {
     /* colors */
-    --primary_color_dark: #7357C7;
-    --secondary_color_dark: #365E4E;
-    --accent_color_dark: #41716A;
-    --text_color_dark: #F4F8F2;
-    --bg_color_dark: #050604;
+    --background-color-dark_mode: #232946;
+    --headline-color-dark_mode: #fffffe;
+    --paragraph-color-dark_mode: #b8c1ec;
+    --button-color-dark_mode: #eebbc3;
+    --button-text-color-dark_mode: #232946;
+    --link-color-dark_mode: ;
 
-    --primary_color_light: #5438A8;
-    --secondary_color_light: #A1C9B9;
-    --accent_color_light: #8EBEB7;
-    --text_color_light: #090D07;
-    --bg_color_light: #FAFBF9;
+
+    --stroke-color-dark_mode: #121629;
+    --main-color-dark_mode: #b8c1ec;
+    --highlight-color-dark_mode: #eebbc3;
+    --primary-color-dark_mode: #fffffe;
+    --secondary-color-dark_mode: #eebbc3;
+
+
+    --background-color: #d4d8f0;
+    --headline-color: #232946;
+    --paragraph-color: #232946;
+    --card-background-color: #fffffe;
+    --button-color: #eebbc3;
+    --button-text-color: #232946;
+    --link-color: #232946;
+
+
+    --stroke-color: #121629;
+    --main-color: #b8c1ec;
+    --highlight-color: #eebbc3;
+    --primary-color: #fffffe;
+    --secondary-color: #eebbc3;
 
 
     /* heading font-size */
@@ -157,7 +175,7 @@ button {
     background-color: var(--secondary_color_light);
 }
 
-.playlist .btn-wrapper{
+.playlist .btn-wrapper {
     justify-self: end;
 }
 
@@ -209,8 +227,8 @@ button {
     box-shadow: none;
     margin: 0;
     cursor: pointer;
- }
- 
+}
+
 
 .playlist-box figure {
     width: 20vw;
@@ -244,9 +262,9 @@ button {
 }
 
 .playlist-box .genre a {
-   font-size: .65rem;
-   padding: .35em var(--padding_small);
-   border-radius: 10px;
+    font-size: .65rem;
+    padding: .35em var(--padding_small);
+    border-radius: 10px;
 }
 
 .playlist-box .genre a:nth-child(4) {
@@ -335,16 +353,18 @@ button {
 
 @keyframes fadeIn {
     0% {
-      display: none;
-      opacity: 0;
+        display: none;
+        opacity: 0;
     }
+
     1% {
-      display: block;
-      opacity: 0;
+        display: block;
+        opacity: 0;
     }
+
     100% {
-      display: block;
-      opacity: 1;
+        display: block;
+        opacity: 1;
     }
 }
 
@@ -482,7 +502,9 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-    main, .hero_header {
+
+    main,
+    .hero_header {
         margin-left: 6.5rem;
     }
 

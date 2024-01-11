@@ -210,9 +210,9 @@ button {
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-button:hover {
+/* button:hover {
     background-color: var(--secondary_color_dark);
-}
+} */
 
 /* MENU MOBILE FIRST*/
 
@@ -233,7 +233,7 @@ button:hover {
     align-items: center;
     gap: var(--gap_medium);
 
-    background-color: var(--primary_color_dark);
+    background-color: var(--button-text-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
     border-radius: 1rem;
     padding: var(--padding_medium) var(--padding_large) var(--padding_medium) var(--padding_large);
@@ -242,7 +242,7 @@ button:hover {
 .menu_icon i {
     font-size: 1.5rem;
     font-weight: 700;
-    color: white;
+    color: var(--primary-color);
 }
 
 /* Show the sidebar when checkbox is checked */
@@ -306,7 +306,7 @@ button:hover {
     left: 0.6875rem;
     width: 0.125rem;
     height: 1.5rem;
-    background-color: white;
+    background-color: var(--button-text-color);
 }
 
 #sidebar .close_icon::before {
@@ -341,9 +341,8 @@ button:hover {
 }
 
 .buttons :nth-last-child(1) {
-    border: 1px solid var(--accent_color_dark);
-    background-color: var(--bg_color_light);
-    color: var(--text_color_light);
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
 }
 
 
@@ -391,7 +390,7 @@ button:hover {
 }
 
 .slick-arrow:hover {
-    background: var(--accent_color_light);
+    background: var(--button-color);
 }
 
 .slick-arrow:before {
@@ -421,8 +420,9 @@ button:hover {
 
 /* SLICK SLIDER ENDS */
 
-/* DARK AND LIGHT MODE SLIDER */
 
+
+/* DARK AND LIGHT MODE SLIDER */
 
 /* Switch styles */
 .switch {
@@ -596,7 +596,7 @@ footer a:hover {
     }
 
     #sidebar {
-        background-color: #C7BEE3;
+        background-color: var(--primary-color);
         padding: var(--padding_medium);
         border-radius: 20px;
 

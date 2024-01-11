@@ -487,6 +487,11 @@ body.dark-mode a {
     color: var(--paragraph-color-dark_mode);
 }
 
+body.dark-mode button {
+    background-color: var(--button-color-dark_mode);
+    color: var(--button-text-color-dark_mode);
+}
+
 /* body.dark-mode .card {
     background-color: var(--card-background-color);
     color: var(--button-text-color-dark_mode);

@@ -9,6 +9,8 @@
 
 - The home icon should maybe take you back to the home page and not the menu. Add a new icon for the menu
 
+- In the search page and the playlist page the logo in the menu is huge
+
 
 
 TO DO IN CSS

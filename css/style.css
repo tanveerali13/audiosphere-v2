@@ -203,12 +203,12 @@ li {
 }
 
 button {
-    background-color: var(--paragraph-color);
-    color: var(--paragraph-color-dark_mode);
+    background-color: var(--button-color);
+    color: var(--button-text-color);
     padding: var(--padding_xsmall) var(--padding_medium) var(--padding_xsmall) var(--padding_medium);
     border-radius: 8px;
     font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    box-shadow: var(--box-shadow);
 }
 
 /* button:hover {

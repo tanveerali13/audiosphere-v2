@@ -174,16 +174,6 @@ main {
     padding: 0;
 }
 
-/* body {
-    background-color: var(--bg_color_light);
-    color: var(--text_color_light);
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-} */
 
 .container {
     max-width: 1200px;

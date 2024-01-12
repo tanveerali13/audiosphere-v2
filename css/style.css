@@ -446,7 +446,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--button-color);
     transition: .4s;
     border-radius: 34px;
 }
@@ -458,7 +458,7 @@ button {
     width: 20px;
     left: 3px;
     bottom: 2px;
-    background-color: white;
+    background-color: var(--card-background-color);
     transition: .4s;
     border-radius: 50%;
 }
@@ -492,6 +492,37 @@ body.dark-mode button {
     background-color: var(--button-color-dark_mode);
     color: var(--button-text-color-dark_mode);
 }
+
+body.dark-mode .buttons {
+    background-color: var(--button-color-dark_mode);
+}
+
+body.dark-mode .buttons :nth-last-child(1) {
+    background-color: var(--primary-color-dark_mode);
+    color: var(--button-text-color-dark_mode);
+}
+
+body.dark-mode .card {
+    background-color: var(--primary-color-dark_mode);
+    color: var(--paragraph-color-dark_mode);
+}
+
+body.dark-mode .menu_icon {
+    background-color: var(--background-color);
+}
+
+body.dark-mode .menu_icon i {
+    color: var(--button-text-color-dark_mode);
+}
+
+body.dark-mode .slider {
+    background-color: var(--button-color-dark_mode);
+}
+
+body.dark-mode .slider:before {
+    background-color: var(--button-text-color);
+}
+
 
 
 

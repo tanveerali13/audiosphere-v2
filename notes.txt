@@ -30,8 +30,8 @@ TO DO IN CSS
     - change the login and upload button to blue for light mode     DONE!
 
 - in the search page create cards for the categories
-    - center align the placeholder text in the searchbar
-    - change the colors of the anchor tags
+    - center align the placeholder text in the searchbar     DONE!
+    - change the colors of the anchor tags     DONE!
 
 - Audio list page
     - change the favorite button to a play button

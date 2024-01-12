@@ -13,10 +13,10 @@
 
 TO DO IN CSS
 - General
-    - fix the background color in light mode
+    - fix the background color in light mode DONE
     - add a link to logo to bring back to home
     - fix the theme slider in dark mode
-    - add dark mode logo png
+    - add dark mode logo png (use js to toggle between images)
 
 -Playlist page
     - change the colors in the playlist page

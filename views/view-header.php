@@ -25,7 +25,7 @@
 <body>
     <main>
         <header class="hero_header">
-            <figure><img src="../assets/images/audioSphere_logo_light_mode.png" alt=""></figure>
+            <figure><img id="logo" src="../assets/images/audioSphere_logo_light_mode.png" alt="logo"></figure>
             <div class="buttons">
                 <button class="btn">log in</button>
                 <button class="btn">sign up</button>

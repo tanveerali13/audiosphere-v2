@@ -154,7 +154,7 @@ button {
 }
 
 /* GENERAL */
-body {
+/* body {
     background-color: var(--bg_color_light);
     color: var(--text_color_light);
     font-family: 'Inter', sans-serif;
@@ -164,7 +164,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-}
+} */
 
 h3,
 h4 {

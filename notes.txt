@@ -1,0 +1,92 @@
+- Images do not load correctly
+- Slider no longer showing or working
+- On click the upload form opens instead of an audio
+- Navigation to the search page in the sidebar doesn't work in mobile only
+    - same for my playlist
+
+- The list icon and the user settings icon take the user to the playlist page
+    - could convert the list icon to take to the audio list page instead
+
+- The home icon should maybe take you back to the home page and not the menu. Add a new icon for the menu
+
+
+
+TO DO IN CSS
+- General
+    - fix the background color in light mode
+    - add a link to logo to bring back to home
+    - fix the theme slider in dark mode
+    - add dark mode logo png
+
+-Playlist page
+    - change the colors in the playlist page
+        - in light mode the cards will be dark blue
+        - in dark mode the cards will be white
+
+    - convert upload button to pink or light blue in dark mode
+    - change the login and upload button to blue for light mode
+
+- in the search page create cards for the categories
+    - center align the placeholder text in the searchbar
+    - change the colors of the anchor tags
+
+- Audio list page
+    - change the favorite button to a play button
+    - change the image width to percentage or rem for responsivness
+    - recreate the read more elipises
+    - recreate the visual hiarchy of the cards
+    - add box shadow
+
+- Upload page
+    - change the outline for the thumbnail upload to white in darkmode
+    - align everything to the center or the left and add some padding
+    - different menu sidebar in the upload page links are blues and non links are light purple
+
+
+
+
+
+Errors that appear in the console
+
+view-myplaylist.php:188 
+
+       GET https://tischa79.web582.com/ui-ux/audiosphere-v2/thumb-uploads/neom-3DPaL6XDcZE-unsplash.jpg 404 (Not Found)
+VM710 search.js:4 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener') at VM710 search.js:4:10 (anonymous) @ VM710 search.js:4 view-myplaylist.php:208 
+        
+        
+       GET https://tischa79.web582.com/ui-ux/audiosphere-v2/thumb-uploads/fruit_ringo.png 404 (Not Found)
+VM736 search.js:4 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener') at VM736 search.js:4:10 (anonymous) @ VM736 search.js:4 view-myplaylist.php:208 
+        
+        
+       GET https://tischa79.web582.com/ui-ux/audiosphere-v2/thumb-uploads/fruit_ringo.png 404 (Not Found)
+view-myplaylist.php:188 
+        
+        
+       GET https://tischa79.web582.com/ui-ux/audiosphere-v2/thumb-uploads/neom-3DPaL6XDcZE-unsplash.jpg 404 (Not Found)
+view-myplaylist.php:188 
+        
+        
+       GET https://tischa79.web582.com/ui-ux/audiosphere-v2/thumb-uploads/neom-3DPaL6XDcZE-unsplash.jpg 404 (Not Found)
+view-myplaylist.php:208 
+        
+        
+       GET https://tischa79.web582.com/ui-ux/audiosphere-v2/thumb-uploads/fruit_ringo.png 404 (Not Found)
+VM762 search.js:4 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
+    at VM762 search.js:4:10
+(anonymous) @ VM762 search.js:4
+VM787 myplaylist.js:46 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
+    at HTMLDocument.<anonymous> (VM787 myplaylist.js:46:14)
+(anonymous) @ VM787 myplaylist.js:46
+VM809 search.js:4 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
+    at VM809 search.js:4:10
+(anonymous) @ VM809 search.js:4
+view-myplaylist.php:188 
+        
+        
+       GET https://tischa79.web582.com/ui-ux/audiosphere-v2/thumb-uploads/neom-3DPaL6XDcZE-unsplash.jpg 404 (Not Found)
+view-myplaylist.php:208 
+        
+        
+       GET https://tischa79.web582.com/ui-ux/audiosphere-v2/thumb-uploads/fruit_ringo.png 404 (Not Found)
+myplaylist.js:46 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
+    at HTMLDocument.<anonymous> (myplaylist.js:46:14)

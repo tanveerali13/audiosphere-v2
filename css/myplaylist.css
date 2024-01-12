@@ -174,7 +174,7 @@ main {
     padding: 0;
 }
 
-body {
+/* body {
     background-color: var(--bg_color_light);
     color: var(--text_color_light);
     font-family: 'Inter', sans-serif;
@@ -183,7 +183,7 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 .container {
     max-width: 1200px;

@@ -160,9 +160,9 @@ a {
 
 }
 
-body {
+/* body {
     background-color: var(--bg_color_light);
-}
+} */
 
 button {
     background-color: var(--headline-color);

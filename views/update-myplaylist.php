@@ -32,7 +32,6 @@ include_once 'view-header.php';
                     <br>
                 </div>
             </div>
-            
 
             <!-- Thumbnail Drop Area -->
             <h2>Thumbnail</h2>

@@ -25,6 +25,8 @@
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    padding: 0;
+    margin: 0;
 }
 
 /*
@@ -555,10 +557,74 @@ button {
 }
 
 /* DARK MODE */
-
 body.dark-mode .playlist-box {
     background-color: var(--primary-color-dark_mode);
     color: var(--paragraph-color);
+}
+
+/* SIGNUP & LOGIN */
+.signup-login {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.signup-login .container {
+    max-width: 460px;
+}
+
+.signup-login h1 {
+    margin-top: 0;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap_small);
+    max-width: 460px;
+}
+
+label {
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent_color_light);
+}
+
+input[type='submit'] {
+    background-color: var(--background-color);
+    margin-top: var(--margin_medium);
+}
+
+input[type='submit']:hover {
+    background-color: var(--button-color-dark_mode);
+}
+
+input[type='submit']:focus {
+    box-shadow: 0 0 0 1px var(--button-color-dark_mode);
+}
+
+.signup-login p {
+    margin: var(--margin_medium) 0 var(--margin_small) 0;
+    font-size: var(--min-text-font-size);
+    color: var(--accent_color_light);
+}
+
+.signup-login a {
+    font-size: 1rem;
+    text-decoration: none;
+    margin-left: var(--margin_small);
+}
+
+.signup-login a i {
+    transform: translateX(-5px);
+    transition: var(--transition);
+}
+
+.signup-login a:hover i {
+    transform: translateX(0);
 }
 
 /* RESPONSIVE */
@@ -596,7 +662,6 @@ body.dark-mode .playlist-box {
 }
 
 @media screen and (min-width: 768px) {
-
     main,
     .hero_header {
         margin-left: 6.5rem;
@@ -619,6 +684,9 @@ body.dark-mode .playlist-box {
         padding: 2em 1em;
     }
 
+    .signup-login {
+        margin-left: 6.5rem;
+    }
 }
 
 @media screen and (min-width: 945px) {

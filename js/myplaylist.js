@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const playIcon = document.querySelector('#play-icon');
     const audioPanel = document.querySelector('.audio-panel');
     const audioTitle = document.querySelector('.audio-panel h4');
-    const loginBtn = document.querySelector('.podcast button');
+    const email = document.getElementById("email").value;
+    const submitBtn = document.getElementById("signup");
 
     function audioPause() {
         playIcon.innerHTML = '<i class="fa-solid fa-circle-pause"></i>';

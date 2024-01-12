@@ -13,19 +13,19 @@
 
 TO DO IN CSS
 - General
-    - fix the background color in light mode DONE
-    - fix the theme slider in dark mode DONE
-    
+    - fix the background color in light mode    DONE!
+    - fix the theme slider in dark mode     DONE!
+
     - add a link to logo to bring back to home
     - add dark mode logo png (use js to toggle between images)
 
 -Playlist page
-    - change the colors in the playlist page
-        - in light mode the cards will be dark blue
-        - in dark mode the cards will be white
+    - change the colors in the playlist page    DONE!
+        - in light mode the cards will be dark blue     DONE!
+        - in dark mode the cards will be white      DONE!
 
-    - convert upload button to pink or light blue in dark mode
-    - change the login and upload button to blue for light mode
+    - convert upload button to pink or light blue in dark mode      DONE!
+    - change the login and upload button to blue for light mode     DONE!
 
 - in the search page create cards for the categories
     - center align the placeholder text in the searchbar

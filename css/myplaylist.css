@@ -252,6 +252,7 @@ button {
     border-radius: 6px;
     box-shadow: var(--box-shadow);
     background-color: var(--button-color);
+    color: var(--button-text-color);
     transition: var(--transition);
 }
 
@@ -330,7 +331,7 @@ button {
 }
 
 .playlist-box figcaption a {
-    color: var(--text_color_dark);
+    color: var(--main-color);
 }
 
 .playlist-box .link i.active {
@@ -454,6 +455,9 @@ button {
     }
 }
 
+
+/* AUDIO PLAYER */
+
 .display {
     background: rgba(255, 255, 255, 0.101);
     border-radius: 15px 15px 0 0;
@@ -558,6 +562,13 @@ button {
     100% {
         height: 15px;
     }
+}
+
+/* DARK MODE */
+
+body.dark-mode .playlist-box {
+    background-color: var(--primary-color-dark_mode);
+    color: var(--paragraph-color);
 }
 
 /* RESPONSIVE */

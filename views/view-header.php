@@ -29,8 +29,12 @@
         <header class="hero_header">
             <figure><img id="logo" src="../assets/images/audioSphere_logo_light_mode.png" alt="logo"></figure>
             <div class="buttons">
-                <button class="btn">log in</button>
-                <button class="btn">sign up</button>
+                <?php if (isset($_SESSION['userID'])) { ?>
+                    <a href="../views/logout.php" class="btn">log out</a>
+                <?php } else { ?>
+                    <a href="../views/login.php" class="btn">log in</a>
+                    <a href="../views/signup.php" class="btn">sign up</a>
+                <?php } ?>
             </div>
         </header>
         <div class="home_menu">

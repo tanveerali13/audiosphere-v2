@@ -493,10 +493,6 @@ body.dark-mode button {
     color: var(--button-text-color-dark_mode);
 }
 
-body.dark-mode .buttons {
-    background-color: var(--button-color-dark_mode);
-}
-
 body.dark-mode .buttons :nth-last-child(1) {
     background-color: var(--primary-color-dark_mode);
     color: var(--button-text-color-dark_mode);

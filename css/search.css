@@ -260,7 +260,7 @@ button:hover {
     margin-bottom: var(--margin_medium);
 }
 
-.card {
+.category_card {
     border-radius: 10px;
     padding: var(--padding_medium);
     background-color: var(--background-color-dark_mode);

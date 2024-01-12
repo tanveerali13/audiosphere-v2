@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include 'view-header.php';
 
 include __DIR__ . '/../controllers/controller-search.php';

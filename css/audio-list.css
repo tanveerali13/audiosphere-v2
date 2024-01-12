@@ -154,23 +154,14 @@ button {
 }
 
 /* GENERAL */
-body {
-    background-color: var(--bg_color_light);
-    color: var(--text_color_light);
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-}
 
 h3,
 h4 {
     margin-bottom: var(--margin_xsmall);
 }
 
+
+/* CARD */
 .card {
     display: flex;
     align-items: center;
@@ -180,8 +171,8 @@ h4 {
     padding: var(--padding_medium);
     margin-bottom: var(--margin_medium);
 
-    background-color: var(--bg_color_dark);
-    color: var(--text_color_dark);
+    background-color: var(--background-color-dark_mode);
+    color: var(--paragraph-color-dark_mode);
 
     font-size: var(--preferred-font-size);
 }

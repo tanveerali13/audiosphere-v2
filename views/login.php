@@ -4,39 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio sphere</title>
+    <title>AudioSphere</title>
 
-    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/upload-form.css">
-    <link rel="stylesheet" href="../css/search.css">
     <link rel="stylesheet" href="../css/myplaylist.css">
-    <link rel="stylesheet" href="../css/audiolist.css">
-
-    <!-- google font -->
-    <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
-
-    <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/2f6fae777f.js" crossorigin="anonymous"></script>
-
-    <!-- slick slider css cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+</head>
 </head>
 
 <body>
     <main>
-        <header class="hero_header">
-            <figure><img id="logo" src="../assets/images/audioSphere_logo_light_mode.png" alt="logo"></figure>
-            <div class="buttons">
-                <?php if (isset($_SESSION['userID'])) { ?>
-                    <a href="../views/logout.php" class="btn">log out</a>
-                <?php } else { ?>
-                    <a href="../views/login.php" class="btn">log in</a>
-                    <a href="../views/signup.php" class="btn">sign up</a>
-                <?php } ?>
-            </div>
-        </header>
         <div class="home_menu">
             <input type="checkbox" id="menu_toggle" />
             <label for="menu_toggle" class="menu_icon">
@@ -54,7 +39,6 @@
                 <div class="logo"><img src="../assets/images/audioSphere_logo_light_mode.png" alt="" srcset=""></div>
 
                 <ul>
-
                     <li><a href="view-search.php">search</a></li>
                     <li><a href="../index.php">home</a></li>
                     <li><a href="view-myplaylist.php">my playlist</a></li>
@@ -77,3 +61,26 @@
                 <label for="menu_toggle" class="close_icon"></label>
             </nav>
         </div>
+
+        <section class="signup-login">
+            <div class="container">
+                <h1>Login</h1>
+                <h4>Please login to see your playlist</h4>
+                <form action="../views/view-myplaylist.php" method="POST">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Username" class="form-control" required>
+
+                    <label for="password">Password</label>
+                    <input type="text" name="password" placeholder="Password" class="form-control" required>
+
+                    <input type="submit" name="login" value="Login" class="btn btn-primary">
+                </form>
+                <p>Do you not have an account?</p>
+                <a href="signup.php"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Signup</a>
+            </div>
+        </section>
+    </main>
+
+<?php
+    include 'view-footer.php';
+?>

@@ -1,5 +1,4 @@
 /* RESET */
-
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -88,40 +87,23 @@ li {
 
 a {
     text-decoration: none;
+    color: var(--paragraph-color);
 }
 
 /* VARIABLES */
 :root {
     /* colors */
-    --background-color-dark_mode: #232946;
-    --headline-color-dark_mode: #fffffe;
-    --paragraph-color-dark_mode: #b8c1ec;
-    --button-color-dark_mode: #eebbc3;
-    --button-text-color-dark_mode: #232946;
-    --link-color-dark_mode: ;
+    --primary_color_dark: #7357C7;
+    --secondary_color_dark: #365E4E;
+    --accent_color_dark: #41716A;
+    --text_color_dark: #F4F8F2;
+    --bg_color_dark: #050604;
 
-
-    --stroke-color-dark_mode: #121629;
-    --main-color-dark_mode: #b8c1ec;
-    --highlight-color-dark_mode: #eebbc3;
-    --primary-color-dark_mode: #fffffe;
-    --secondary-color-dark_mode: #eebbc3;
-
-
-    --background-color: #d4d8f0;
-    --headline-color: #232946;
-    --paragraph-color: #232946;
-    --card-background-color: #fffffe;
-    --button-color: #eebbc3;
-    --button-text-color: #232946;
-    --link-color: #232946;
-
-
-    --stroke-color: #121629;
-    --main-color: #b8c1ec;
-    --highlight-color: #eebbc3;
-    --primary-color: #fffffe;
-    --secondary-color: #eebbc3;
+    --primary_color_light: #5438A8;
+    --secondary_color_light: #A1C9B9;
+    --accent_color_light: #8EBEB7;
+    --text_color_light: #090D07;
+    --bg_color_light: #FAFBF9;
 
 
     /* heading font-size */
@@ -158,19 +140,20 @@ a {
     --gap_large: 1.5em;
     --gap_xlarge: 2em;
 
+    --grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
 /* GENERAL */
 body {
-    background-color: var(--background-color);
-    color: var(--paragraph-color);
+    background-color: var(--bg_color_light);
+    color: var(--text_color_light);
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out; */
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 main {
@@ -196,23 +179,23 @@ h3 {
 }
 
 li {
-    color: var(--text_color_dark);
+    color: var(--link-color);
     padding: var(--padding_xsmall);
     font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
 }
 
 button {
-    background-color: var(--headline-color);
-    color: var(--paragraph-color-dark_mode);
+    background-color: var(--button-color);
+    color: var(--button-text-color);
     padding: var(--padding_xsmall) var(--padding_medium) var(--padding_xsmall) var(--padding_medium);
     border-radius: 8px;
     font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    box-shadow: var(--box-shadow);
 }
 
-/* button:hover {
+button:hover, .hero_header .btn:hover {
     background-color: var(--secondary_color_dark);
-} */
+}
 
 /* MENU MOBILE FIRST*/
 
@@ -233,7 +216,7 @@ button {
     align-items: center;
     gap: var(--gap_medium);
 
-    background-color: var(--button-text-color);
+    background-color: var(--primary_color_dark);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
     border-radius: 1rem;
     padding: var(--padding_medium) var(--padding_large) var(--padding_medium) var(--padding_large);
@@ -242,7 +225,7 @@ button {
 .menu_icon i {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: white;
 }
 
 /* Show the sidebar when checkbox is checked */
@@ -261,7 +244,7 @@ button {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: var(--primary-color);
+    background: var(--primary_color_dark);
     transition: left 0.3s ease;
     z-index: 999;
 }
@@ -281,12 +264,16 @@ button {
 }
 
 #sidebar li a {
-    color: var(--paragraph-color);
+<<<<<<< HEAD
+    color: var(--link-color);
+=======
+    color: var(--text_color_dark);
+>>>>>>> 6f28f17 (put back login & signup buttons styles)
     transition: all 0.3s ease;
 }
 
 #sidebar li a:hover {
-    color: var(--highlight-color);
+    color: var(--accent_color_dark);
 }
 
 #sidebar .close_icon {
@@ -306,7 +293,7 @@ button {
     left: 0.6875rem;
     width: 0.125rem;
     height: 1.5rem;
-    background-color: var(--button-text-color);
+    background-color: white;
 }
 
 #sidebar .close_icon::before {
@@ -317,7 +304,7 @@ button {
     transform: rotate(-45deg);
 }
 
-.logo {
+#logo {
     width: 4.375rem;
     height: 4.375rem;
     object-fit: cover;
@@ -340,9 +327,20 @@ button {
     object-fit: cover;
 }
 
-.buttons :nth-last-child(1) {
-    background-color: var(--primary-color);
-    color: var(--button-text-color);
+.hero_header .btn {
+    display: inline-block;
+    background-color: var(--primary_color_dark);
+    color: var(--text_color_dark);
+    padding: var(--padding_xsmall) var(--padding_medium) var(--padding_xsmall) var(--padding_medium);
+    border-radius: 8px;
+    font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.hero_header .btn:nth-last-child(1) {
+    border: 1px solid var(--accent_color_dark);
+    background-color: var(--bg_color_light);
+    color: var(--text_color_light);
 }
 
 
@@ -379,7 +377,7 @@ button {
 .slick-arrow {
     position: absolute;
     z-index: 1;
-    background-color: var(--button-color);
+    background-color: var(--primary_color_dark);
     width: 40px;
     height: 40px;
     font-size: 0;
@@ -390,7 +388,7 @@ button {
 }
 
 .slick-arrow:hover {
-    background: var(--primary-color);
+    background: var(--accent_color_light);
 }
 
 .slick-arrow:before {
@@ -420,9 +418,8 @@ button {
 
 /* SLICK SLIDER ENDS */
 
-
-
 /* DARK AND LIGHT MODE SLIDER */
+
 
 /* Switch styles */
 .switch {
@@ -445,7 +442,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--button-color);
     transition: .4s;
     border-radius: 34px;
 }
@@ -457,13 +454,13 @@ button {
     width: 20px;
     left: 3px;
     bottom: 2px;
-    background-color: white;
+    background-color: var(--card-background-color);
     transition: .4s;
     border-radius: 50%;
 }
 
 input:checked+.slider {
-    background-color: var(--primary-color);
+    background-color: #C7BEE3;
 }
 
 input:checked+.slider:before {
@@ -472,8 +469,8 @@ input:checked+.slider:before {
 
 /* Dark mode styles */
 body.dark-mode {
-    background-color: var(--background-color-dark_mode);
-    color: var(--paragraph-color-dark_mode);
+    background-color: var(--bg_color_dark);
+    color: var(--text_color_dark);
 }
 
 body.dark-mode h1,
@@ -484,19 +481,46 @@ body.dark-mode h5,
 body.dark-mode h6,
 body.dark-mode .text,
 body.dark-mode a {
-    color: var(--paragraph-color-dark_mode);
+    color: var(--text_color_dark);
 }
 
+<<<<<<< HEAD
 body.dark-mode button {
     background-color: var(--button-color-dark_mode);
     color: var(--button-text-color-dark_mode);
 }
 
-/* body.dark-mode .card {
-    background-color: var(--card-background-color);
+body.dark-mode .buttons :nth-last-child(1) {
+    background-color: var(--primary-color-dark_mode);
     color: var(--button-text-color-dark_mode);
-} */
+}
 
+body.dark-mode .card {
+    background-color: var(--primary-color-dark_mode);
+    color: var(--paragraph-color-dark_mode);
+}
+
+body.dark-mode .menu_icon {
+    background-color: var(--background-color);
+}
+
+body.dark-mode .menu_icon i {
+    color: var(--button-text-color-dark_mode);
+}
+
+body.dark-mode .slider {
+    background-color: var(--button-color-dark_mode);
+}
+
+body.dark-mode .slider:before {
+    background-color: var(--button-text-color);
+}
+
+
+
+
+=======
+>>>>>>> 6f28f17 (put back login & signup buttons styles)
 /* DARK AND LIGHT MODE SLIDER ENDS */
 
 
@@ -506,6 +530,7 @@ body.dark-mode button {
     height: 9.375rem;
     margin: var(--margin_small);
 }
+
 
 .image_container img {
     height: 9.375rem;
@@ -536,23 +561,6 @@ body.dark-mode button {
 
 .image_container:hover .text-bg {
     opacity: 0.8;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
 
 /* MEDIA QUERIES */
@@ -605,7 +613,7 @@ footer a:hover {
     }
 
     #sidebar {
-        background-color: var(--primary-color);
+        background-color: #C7BEE3;
         padding: var(--padding_medium);
         border-radius: 20px;
 

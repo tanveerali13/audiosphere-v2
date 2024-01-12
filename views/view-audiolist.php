@@ -17,7 +17,7 @@ include_once __DIR__ . '/../controllers/controller-audiolist.php';
         echo '<div class="title">';
         echo '<h3>' . $list['audioTitle'] . '</h3>';
         echo '</div>';
-        echo '<button class="favorite">favorite</button>';
+        echo '<button class="favorite">play</button>';
         echo '</div>';
         echo '<div class="card_desc clamp">';
         echo '<p>' . $list['audioDesc'] . '</p>';

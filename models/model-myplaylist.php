@@ -45,7 +45,11 @@
                     $results[] = $row;
                 }
                 $mysqli->close();
-                return $results;
+                if (isset($results)) {
+                    return $results;
+                } else {
+                    return false;
+                }
             } else {
                 return false;
             }
@@ -160,6 +164,45 @@
                 $query = $mysqli->query("DELETE FROM audios WHERE ID = $id");
                 $mysqli->close();
                 return true;
+            } else {
+                return false;
+            }
+        }
+
+        public function findUser($username, $password) {
+            $mysqli = $this->connect();
+            if($mysqli) {
+                $query = $mysqli->query("SELECT * FROM audioUsers WHERE audioUsername = '$username' AND audioUserPass = '$password'");
+                $result = $query->fetch_assoc();
+                $mysqli->close();
+                return $result['audioUserID'];
+            } else {
+                return false;
+            }
+        }
+
+        // Signup
+        public function insertUser($userid, $username, $password, $email, $image) {
+            if (!empty($image['tmp_name'])) {
+                $userImageName = "../thumb-uploads/" . basename($image["name"]);
+                move_uploaded_file($image["tmp_name"], $userImageName);
+            } else {
+                $userImageName = '../thumb-uploads/default-profile.png';
+            }
+
+            $mysqli = $this->connect();
+            if ($mysqli) {
+                $stmt = $mysqli->prepare("INSERT INTO audioUsers (audioUserID, audioUsername, audioUserPass, audioUserEmail, audioUserImage) VALUES (?, ?, ?, ?, ?)");
+                if ($stmt) {
+                    $stmt->bind_param("issss", $userid, $username, $password, $email, $userImageName);
+                    $stmt->execute();
+                    $stmt->close();
+                    $mysqli->close();
+                    return true;
+                } else {
+                    $mysqli->close();
+                    return false;
+                }
             } else {
                 return false;
             }

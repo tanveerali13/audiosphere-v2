@@ -160,17 +160,17 @@ a {
 
 }
 
-body {
+/* body {
     background-color: var(--bg_color_light);
-}
+} */
 
 button {
-    background-color: var(--headline-color);
-    color: var(--paragraph-color-dark_mode);
+    background-color: var(--button-color);
+    color: var(--button-text-color);
     padding: var(--padding_xsmall) var(--padding_medium) var(--padding_xsmall) var(--padding_medium);
     border-radius: 8px;
     font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    box-shadow: var(--box-shadow);
 }
 
 button:hover {
@@ -182,22 +182,13 @@ button:hover {
     padding: var(--padding_medium);
 }
 
-/*input {
-    width: 100%;
-    height: 50px;
-    border-radius: 10px;
-    border: none;
-    padding: var(--padding_medium);
-    font-size: var(--preferred-font-size);
-    margin-bottom: var(--margin_medium);
-} */
 
 /* SEARCH BOX */
 .search-box {
     width: 100%;
-    background: #fff;
+    background: var(--primary-color);
     margin: 40px auto 0;
-    border: 2px solid black;
+    border: 2px solid var(--stroke-color);
     border-radius: 5px;
 }
 
@@ -215,6 +206,8 @@ button:hover {
     color: #333;
     height: 25px;
     font-size: 16px;
+    margin: 0;
+    padding: var(--padding_medium);
 }
 
 .search-button {
@@ -267,11 +260,10 @@ button:hover {
     margin-bottom: var(--margin_medium);
 }
 
-.card {
+.category_card {
     border-radius: 10px;
     padding: var(--padding_medium);
-    background-color: var(--bg_color_dark);
-    color: var(--text_color_dark);
+    background-color: var(--background-color-dark_mode);
     font-size: var(--preferred-font-size);
     margin-bottom: var(--margin_medium);
     display: flex;
@@ -290,8 +282,11 @@ h4 {
     padding: var(--padding_small);
     align-self: flex-end;
     font-size: clamp(var(--min-heading-font-size), var(--preferred-heading-font-size), var(--max-heading-font-size));
-    color: var(--text_color_dark);
     text-transform: capitalize;
+}
+
+h4 a {
+    color: var(--paragraph-color-dark_mode);
 }
 
 /* Dark mode styles */
@@ -305,8 +300,8 @@ body.dark-mode a {
 }
 
 body.dark-mode .card {
-    background-color: var(--accent_color_light);
-    color: var(--text_color_light);
+    background-color: var(--primary-color-dark_mode);
+    color: var(--paragraph-color-dark_mode);
 }
 
 

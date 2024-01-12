@@ -25,6 +25,8 @@
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    padding: 0;
+    margin: 0;
 }
 
 /*
@@ -174,16 +176,6 @@ main {
     padding: 0;
 }
 
-body {
-    background-color: var(--bg_color_light);
-    color: var(--text_color_light);
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
 
 .container {
     max-width: 1200px;
@@ -208,7 +200,7 @@ h3 {
 
 h4 {
     font-size: .85rem;
-    color: #52C7B5;
+    color: var(--main-color);
     margin-bottom: var(--margin_small);
     margin-top: 0;
     padding: 0;
@@ -216,13 +208,13 @@ h4 {
 }
 
 h5 {
-    color: var(--text_color_dark);
+    color: var(--main-color);
     text-transform: uppercase;
 }
 
 p {
     font-size: var(--preferred-text-font-size);
-    color: var(--text_color_dark);
+    color: var(--main-color);
 }
 
 li {
@@ -234,12 +226,12 @@ li {
 a {
     display: inline-block;
     text-decoration: none;
-    color: var(--text_color_light);
+    color: var(--button-text-color);
 }
 
 button {
-    background-color: var(--primary_color_dark);
-    color: var(--text_color_dark);
+    background-color: var(--button-color);
+    color: var(--button-text-color);
     padding: var(--padding_xsmall) var(--padding_medium) var(--padding_xsmall) var(--padding_medium);
     border-radius: 8px;
     font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
@@ -251,12 +243,13 @@ button {
     padding: var(--padding_small) var(--padding_large);
     border-radius: 6px;
     box-shadow: var(--box-shadow);
-    background-color: var(--accent_color_light);
+    background-color: var(--button-color);
+    color: var(--button-text-color);
     transition: var(--transition);
 }
 
 .playlist .btn:hover {
-    background-color: var(--secondary_color_light);
+    background-color: var(--primary-color);
 }
 
 .playlist .btn-wrapper {
@@ -301,7 +294,7 @@ button {
     align-items: center;
     column-gap: var(--gap_small);
     margin-bottom: var(--margin_medium);
-    background-color: var(--primary_color_light);
+    background-color: var(--background-color-dark_mode);
     padding: var(--padding_medium);
     border-radius: 24px;
     box-shadow: var(--box-shadow);
@@ -330,7 +323,7 @@ button {
 }
 
 .playlist-box figcaption a {
-    color: var(--text_color_dark);
+    color: var(--main-color);
 }
 
 .playlist-box .link i.active {
@@ -365,7 +358,7 @@ button {
     font-size: var(--min-heading-font-size);
     padding: 0;
     background-color: transparent;
-    color: #C4FFE7;
+    color: var(--main-color);
     box-shadow: none;
 }
 
@@ -453,6 +446,9 @@ button {
         opacity: 1;
     }
 }
+
+
+/* AUDIO PLAYER */
 
 .display {
     background: rgba(255, 255, 255, 0.101);
@@ -560,6 +556,77 @@ button {
     }
 }
 
+/* DARK MODE */
+body.dark-mode .playlist-box {
+    background-color: var(--primary-color-dark_mode);
+    color: var(--paragraph-color);
+}
+
+/* SIGNUP & LOGIN */
+.signup-login {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.signup-login .container {
+    max-width: 460px;
+}
+
+.signup-login h1 {
+    margin-top: 0;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap_small);
+    max-width: 460px;
+}
+
+label {
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent_color_light);
+}
+
+input[type='submit'] {
+    background-color: var(--background-color);
+    margin-top: var(--margin_medium);
+}
+
+input[type='submit']:hover {
+    background-color: var(--button-color-dark_mode);
+}
+
+input[type='submit']:focus {
+    box-shadow: 0 0 0 1px var(--button-color-dark_mode);
+}
+
+.signup-login p {
+    margin: var(--margin_medium) 0 var(--margin_small) 0;
+    font-size: var(--min-text-font-size);
+    color: var(--accent_color_light);
+}
+
+.signup-login a {
+    font-size: 1rem;
+    text-decoration: none;
+    margin-left: var(--margin_small);
+}
+
+.signup-login a i {
+    transform: translateX(-5px);
+    transition: var(--transition);
+}
+
+.signup-login a:hover i {
+    transform: translateX(0);
+}
+
 /* RESPONSIVE */
 @media screen and (min-width: 500px) {
     h4 {
@@ -595,7 +662,6 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-
     main,
     .hero_header {
         margin-left: 6.5rem;
@@ -618,6 +684,9 @@ button {
         padding: 2em 1em;
     }
 
+    .signup-login {
+        margin-left: 6.5rem;
+    }
 }
 
 @media screen and (min-width: 945px) {

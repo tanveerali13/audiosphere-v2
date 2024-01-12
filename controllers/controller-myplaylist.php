@@ -17,7 +17,7 @@
             if(!empty($audios)) {
                 include '../views/display-myplaylist.php';
             } else {
-                echo '<h3  style="color: #090D07; text-align: center;">No users or audios found</h3>';
+                echo '<h3  style="color: #090D07; text-align: center;">No audio found</h3>';
             }
         }
 
@@ -73,6 +73,31 @@
                 exit;
             } else {
                 echo '<h3 style="color: #090D07; text-align: center;">Delete failed</h3>';
+            }
+        }
+
+        // Signup
+        public function signup($userid, $username, $password, $email, $image) {
+            // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $hashedPassword = $password;
+            $signup = $this->model->insertUser($userid, $username, $hashedPassword, $email, $image);
+            if ($signup) {
+                return true;
+            } else {
+                echo '<h3 style="color: #090D07; text-align: center;">Signup failed</h3>';
+            }
+        }
+
+        // Login
+        public function login($username, $password) {
+            $hashedPassword = $password; // password_hash($password, PASSWORD_DEFAULT);
+            $userid = $this->model->findUser($username, $hashedPassword);
+            if ($userid) {
+                $_SESSION['loggedin'] = true;
+                $_SESSION['userID'] = $userid;
+                header('Location: ../views/view-myplaylist.php');
+            } else {
+                echo '<h3 style="color: #090D07; text-align: center;">Login failed</h3>';
             }
         }
     }

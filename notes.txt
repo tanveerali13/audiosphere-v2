@@ -10,6 +10,7 @@
 - The home icon should maybe take you back to the home page and not the menu. Add a new icon for the menu
 
 - In the search page and the playlist page the logo in the menu is huge
+- Unable to update the css for audio list because i'm in the controller and not the views
 
 
 

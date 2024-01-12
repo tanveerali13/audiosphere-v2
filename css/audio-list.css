@@ -160,7 +160,9 @@ h4 {
     margin-bottom: var(--margin_xsmall);
 }
 
-#audio_card {
+
+/* CARD */
+.card {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,6 +171,8 @@ h4 {
     padding: var(--padding_medium);
     margin-bottom: var(--margin_medium);
 
+    background-color: var(--background-color-dark_mode);
+    color: var(--paragraph-color-dark_mode);
 
     font-size: var(--preferred-font-size);
 }
@@ -181,19 +185,16 @@ h4 {
 }
 
 .favorite {
+    background-color: var(--primary_color_dark);
+    color: var(--text_color_dark);
     border-radius: 40px;
     padding: var(--padding_small) var(--padding_medium);
     margin-right: var(--margin_small);
 }
 
-.favorite:hover {
-    background-color: var(--primary-color);
-}
-
-figure {
-    width: 100%;
-    height: 100%;
-    margin: 0;
+img {
+    width: 100px;
+    height: 100px;
 }
 
 .card_info {

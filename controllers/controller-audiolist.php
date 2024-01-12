@@ -10,7 +10,6 @@ $lists = new AudioListModel();
 if(isset($_GET['category'])){
     $categoryID = $_GET['category'];
     $audioList = $lists->selectAudios($categoryID);
-    var_dump($audioList);
     // Check if $audioList is empty and handle accordingly
     if ($audioList === false) {
         // Handle database connection error

@@ -17,8 +17,8 @@
             if(!empty($audios)) {
                 include '../views/display-myplaylist.php';
             } else {
-                echo '<h3 style="text-align: center;">No audio found</h3>';
-                echo '<a href="../views/view-upload.php" class="arrow-btn upload-btn"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Upload an audio</a>';
+                echo '<h3 id="error-msg" style="text-align: center;">No audio found</h3>';
+                echo '<a href="../views/view-upload.php" id="error-msg" class="arrow-btn upload-btn"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Upload an audio</a>';
             }
         }
 
@@ -27,7 +27,7 @@
             if(!empty($user)) {
                 include '../views/display-user.php';
             } else {
-                echo '<h3 style="text-align: center;">No user found</h3>';
+                echo '<h3 id="error-msg" style="text-align: center;">No user found</h3>';
             }
         }
 
@@ -42,7 +42,7 @@
             if(!empty($song)) {
                 include '../views/update-myplaylist.php';
             } else {
-                echo '<h3 style="text-align: center;">No song found</h3>';
+                echo '<h3 id="error-msg" style="text-align: center;">No song found</h3>';
             }
         }
 
@@ -53,8 +53,8 @@
                 include '../views/display-myplaylist.php';
                 
             } else {
-                echo '<h3 style="text-align: center;">No audio found</h3>';
-                echo '<a href="../views/view-upload.php" class="arrow-btn upload-btn"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Upload an audio</a>';
+                echo '<h3 id="error-msg" style="text-align: center;">No audio found</h3>';
+                echo '<a href="../views/view-upload.php" id="error-msg" class="arrow-btn upload-btn"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Upload an audio</a>';
             }
         }
 
@@ -64,7 +64,7 @@
                 header('Location: ../views/view-myplaylist.php');
                 exit;
             } else {
-                echo '<h3 style="text-align: center;">Didn\'t update</h3>';
+                echo '<h3 id="error-msg" style="text-align: center;">Didn\'t update</h3>';
             }
         }
 
@@ -74,7 +74,7 @@
                 header('Location: ../views/view-myplaylist.php');
                 exit;
             } else {
-                echo '<h3 style="text-align: center;">Delete failed</h3>';
+                echo '<h3 id="error-msg" style="text-align: center;">Delete failed</h3>';
             }
         }
 
@@ -86,7 +86,7 @@
             if ($signup) {
                 return true;
             } else {
-                echo '<h3 style="text-align: center;">Signup failed</h3>';
+                echo '<h3 id="error-msg" style="text-align: center;">Signup failed</h3>';
             }
         }
 
@@ -99,7 +99,7 @@
                 $_SESSION['userID'] = $userid;
                 header('Location: ../views/view-myplaylist.php');
             } else {
-                echo '<h3 style="text-align: center;">Login failed</h3>';
+                echo '<h3 id="error-msg" style="text-align: center;">Login failed</h3>';
             }
         }
     }

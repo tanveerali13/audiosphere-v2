@@ -54,10 +54,14 @@ section {
   gap: 20px;
 }
 
-.left {
-  display: flex;
-  justify-content: center;
+.left:nth-child(1) {
+  order: 2;
 }
+
+.right:nth-child(2) {
+  order: 1;
+}
+
 
 .audio-block {
   background-color: var(--primary_color_dark);
@@ -167,13 +171,6 @@ textarea {
     grid-template-columns: 1fr 1fr;
   }
 
-  .left:nth-child(1) {
-    order: 2;
-  }
-
-  .right:nth-child(2) {
-    order: 1;
-  }
 
   .thumbnail p {
     max-width: 50%;

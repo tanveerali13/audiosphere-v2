@@ -33,5 +33,5 @@ function display(result) {
 }
 
 function selectInput(selectedAudioId) {
-    window.location.href = `view-upload.php?audioId=${selectedAudioId}`;
+    window.location.href = `../controllers/controller-audiolist.php?audioID=${selectedAudioId}`;
 }

@@ -18,8 +18,24 @@ if(isset($_GET['category'])){
         // Handle case when no audio is found for the given category
         echo "No audio found for the selected category.";
     } else {
-        // Include the view file with $audioList
         include __DIR__ . '/../views/view-audiolist.php';
+    }
+
+}
+
+if(isset($_GET['audioID'])){
+    $audioID = $_GET['audioID'];
+    $audio = $lists->selectToPlay($audioID);
+
+    // Check if $audio is empty and handle accordingly
+    if ($audio === false) {
+   
+        echo "Error connecting to the database.";
+    } elseif (empty($audio)) {
+
+        echo "No audio found for the selected ID.";
+    } else {
+        include __DIR__ . '/../views/view-player.php';
     }
 }
 

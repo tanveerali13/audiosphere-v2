@@ -30,7 +30,7 @@ include 'view-header.php';
             $audioId = $audio['audioID'];
 
             echo '<div class="item image_container">';
-            echo '<a href="view-upload.php?audioId=' . $audioId . '">';
+            echo '<a href="../controllers/controller-audiolist.php?audioID=' . $audioId . '">';
             echo '<img src="' . $audio['audioThumb'] . '" alt="' . $audio['audioTitle'] . '">';
             echo '<p class="text">' . $audio['audioTitle'] . '</p>';
             echo '</a>';

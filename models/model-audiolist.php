@@ -32,6 +32,26 @@ class AudioListModel {
         }
         
     }
+
+    public function selectToPlay($audioID) {
+       
+        $this->connect();
+        if ($this->conn) {
+            $results = [];
+            $result = $this->conn->query("SELECT * FROM audios WHERE ID = '$audioID'");
+                                          
+            while ($row = $result->fetch_assoc()) {
+                //var_dump($row);
+                $results[] = $row;
+            }
+            $this->conn->close();
+            return $results;
+            //return true;
+        } else {
+            return false;
+        }
+        
+    }
 }
 
 ?>

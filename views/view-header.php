@@ -9,9 +9,9 @@
     <!-- css -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/upload-form.css">
-    <link rel="stylesheet" href="../css/search.css">
-    <link rel="stylesheet" href="../css/myplaylist.css">
+    <link rel="stylesheet" href="../css/search.css"> 
     <link rel="stylesheet" href="../css/audiolist.css">
+
 
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
@@ -55,9 +55,9 @@
 
                 <ul>
 
-                    <li><a href="view-search.php">search</a></li>
+                    <li><a href="../views/view-search.php">search</a></li>
                     <li><a href="../index.php">home</a></li>
-                    <li><a href="view-myplaylist.php">my playlist</a></li>
+                    <li><a href="../views/view-myplaylist.php">my playlist</a></li>
 
                     <div>
                         <li>featured stories</li>

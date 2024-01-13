@@ -1,6 +1,7 @@
 <?php
-
 ini_set('display_errors', 1);
+session_start();
+
 include_once __DIR__ . '/../controllers/controller-homesliders.php';
 
 include 'view-header.php';

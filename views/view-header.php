@@ -41,9 +41,9 @@
             <input type="checkbox" id="menu_toggle" />
             <label for="menu_toggle" class="menu_icon">
                 <span class="navicon"><i class="fas fa-home"></i></span>
-                <a href="view-search.php"><i class="fas fa-search"></i></a>
-                <a href="view-myplaylist.php"><i class="fa-solid fa-list-ul"></i></a>
-                <a href="view-myplaylist.php"><i class="fa-solid fa-user-gear"></i></a>
+                <a href="../views/view-search.php"><i class="fas fa-search"></i></a>
+                <a href="../views/view-myplaylist.php"><i class="fa-solid fa-list-ul"></i></a>
+                <a href="../views/view-myplaylist.php"><i class="fa-solid fa-user-gear"></i></a>
                 <label class="switch">
                     <input type="checkbox" id="modeToggle">
                     <span class="slider"></span>

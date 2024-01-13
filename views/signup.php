@@ -84,10 +84,10 @@
                     <label for="image">Image</label>
                     <input type="file" name="image" class="form-control">
 
-                    <input id="signup" type="submit" name="signup" value="Signup" class="btn btn-primary">
+                    <input id="signup" type="submit" name="signup" value="Signup">
                 </form>
                 <p>Do you already have an account?</p>
-                <a href="login.php"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Login</a>
+                <a href="login.php" class="arrow-btn"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Login</a>
             </div>
         </section>
     </main>

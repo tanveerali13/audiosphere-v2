@@ -12,7 +12,6 @@
     <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900">
 
-
     <!-- CSS -->
     <link rel="stylesheet" href="../css/myplaylist.css">
 

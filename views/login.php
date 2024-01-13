@@ -73,10 +73,10 @@
                     <label for="password">Password</label>
                     <input type="text" name="password" placeholder="Password" class="form-control" required>
 
-                    <input type="submit" name="login" value="Login" class="btn btn-primary">
+                    <input type="submit" name="login" value="Login">
                 </form>
                 <p>Do you not have an account?</p>
-                <a href="signup.php"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Signup</a>
+                <a href="signup.php" class="arrow-btn"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Signup</a>
             </div>
         </section>
     </main>

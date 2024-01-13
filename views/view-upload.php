@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+$userid = $_SESSION['userID'];
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
@@ -11,13 +14,16 @@ include __DIR__ . '/../controllers/controller-upload.php';
         <h1>Let's Share Your Creation</h1>
 
         <form action="../controllers/controller-upload.php" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" name="audioUserID" value="<?php echo $userid; ?>">
+
             <div class="form-grid">
                 <div class="left">
                     <!-- MP3 Audio File Input -->
                     <div class="audio-block">
                         <label class="audio-drop-label" for="audioFile">Drag and Drop or Click to Upload</label><br>
                         <div class="audio-drop-area"> 
-                            <input class= "audio-drop"type="file" id="audio" name="audio" accept="audio/mp3" required>
+                            <input class= "audio-drop" type="file" id="audio" name="audio" accept="audio/mp3" required>
                         </div>
                     </div>
                     

@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_POST["audioTitle"],
         $_POST["audioDesc"],
         $_FILES["audioThumb"],
+        $_POST["audioUserID"],
         $_POST["audioCategoryID"]
     );
 

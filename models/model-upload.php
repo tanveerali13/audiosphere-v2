@@ -11,9 +11,9 @@ class AudioModel {
     }
     
 
-    public function uploadAudio($audioFile, $title, $description, $thumbnailFile, $categoryID) {
+    public function uploadAudio($audioFile, $title, $description, $thumbnailFile, $userID, $categoryID) {
         //hardcoded userID
-        $userID = 1;
+        
         $this->connect();
         // Upload audio file in separate directory and get file directory to store in table
         $audioFileName = "../audio-uploads/" . basename($audioFile["name"]);

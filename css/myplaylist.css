@@ -15,6 +15,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /*
@@ -171,11 +172,14 @@ a {
 }
 
 /* GENERAL */
+html {
+    overflow-x: hidden;
+}
+
 main {
     height: 100%;
     padding: 0;
 }
-
 
 .container {
     max-width: 1200px;
@@ -579,13 +583,18 @@ body.dark-mode h4, body.dark-mode h5, body.dark-mode figcaption a, body.dark-mod
 
 /* SIGNUP & LOGIN */
 .signup-login {
+    width: 100vw;
+}
+
+.signup-login .container {
+    max-width: 400px;
     height: 100vh;
     display: grid;
     place-items: center;
 }
 
-.signup-login .container {
-    max-width: 460px;
+.form-wrapper {
+    width: 100%;
 }
 
 .signup-login h1 {
@@ -761,6 +770,10 @@ input[type='submit']:focus {
     .playlist-box .icons a {
         font-size: 1.8rem;
     }
+
+    .signup-login {
+        margin-left: -3.5rem;
+    }
 }
 
 @media screen and (min-width: 1400px) {
@@ -774,5 +787,9 @@ input[type='submit']:focus {
 
     .playlist-box figure {
         width: 100px;
+    }
+
+    .signup-login {
+        margin-left: -6.5rem;
     }
 }

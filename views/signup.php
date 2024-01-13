@@ -67,27 +67,29 @@
 
         <section class="signup-login">
             <div class="container">
-                <h1>Signup</h1>
+                <article class="form-wrapper">
+                    <h1>Signup</h1>
 
-                <form action="../views/view-myplaylist.php" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="userid" value="<?php echo $userid; ?>">
+                    <form action="../views/view-myplaylist.php" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="userid" value="<?php echo $userid; ?>">
 
-                    <label for="username">Username</label>
-                    <input type="text" name="username" placeholder="Username" class="form-control" required>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" placeholder="Username" class="form-control" required>
 
-                    <label for="password">Password (should contain at least 6 characters)</label>
-                    <input type="text" name="password" placeholder="Password" class="form-control" required minlength="6">
+                        <label for="password">Password (should contain at least 6 characters)</label>
+                        <input type="text" name="password" placeholder="Password" class="form-control" required minlength="6">
 
-                    <label for="email">Email</label>
-                    <input id="email" type="email" name="email" placeholder="Email" class="form-control" required>
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" placeholder="Email" class="form-control" required>
 
-                    <label for="image">Image</label>
-                    <input type="file" name="image" class="form-control">
+                        <label for="image">Image</label>
+                        <input type="file" name="image" class="form-control">
 
-                    <input id="signup" type="submit" name="signup" value="Signup">
-                </form>
-                <p>Do you already have an account?</p>
-                <a href="login.php" class="arrow-btn"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Login</a>
+                        <input id="signup" type="submit" name="signup" value="Signup">
+                    </form>
+                    <p>Do you already have an account?</p>
+                    <a href="login.php" class="arrow-btn"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Login</a>
+                </article>
             </div>
         </section>
     </main>

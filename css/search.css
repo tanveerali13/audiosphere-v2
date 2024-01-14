@@ -263,7 +263,8 @@ button:hover {
 .category_card {
     border-radius: 10px;
     padding: var(--padding_medium);
-    background-color: var(--background-color-dark_mode);
+    background-color: var(--card-background-color);
+    box-shadow: var(--box-shadow);
     font-size: var(--preferred-font-size);
     margin-bottom: var(--margin_medium);
     display: flex;
@@ -286,7 +287,7 @@ h4 {
 }
 
 h4 a {
-    color: var(--paragraph-color-dark_mode);
+    color: var(--button-text-color);
 }
 
 /* Dark mode styles */
@@ -296,7 +297,7 @@ body.dark-mode h2,
 body.dark-mode h3,
 body.dark-mode .text,
 body.dark-mode a {
-    color: var(--text_color_dark);
+    color: var(--button-text-color);
 }
 
 body.dark-mode .card {

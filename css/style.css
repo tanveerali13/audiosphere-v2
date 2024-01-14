@@ -604,29 +604,6 @@ audio {
     margin-top: 20px;
 }
 
-
-/* FOOTER */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* FOOTER ENDS */
-
-
-
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 470px) {

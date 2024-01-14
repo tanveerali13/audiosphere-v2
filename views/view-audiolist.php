@@ -8,8 +8,8 @@ include_once __DIR__ . '/../controllers/controller-audiolist.php';
 <?php
 
     foreach ($audioList as $list) {
-        echo '<article class="card">';
-        echo '<figure>';
+        echo '<article class="audio_card">';
+        echo '<figure class="card_img">';
         echo '<img src="' . $list['audioThumb'] . '" alt="' . $list['audioTitle'] . '">';
         echo '</figure>';
         echo '<div class="card_info">';

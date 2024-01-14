@@ -162,13 +162,14 @@ h4 {
 
 
 /* CARD */
-.card {
+.audio_card {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: var(--gap_large);
 
     border-radius: 10px;
-    padding: var(--padding_medium);
+    padding: var(--padding_large);
     margin-bottom: var(--margin_medium);
 
     background-color: var(--background-color-dark_mode);
@@ -192,9 +193,8 @@ h4 {
     margin-right: var(--margin_small);
 }
 
-img {
-    width: 100px;
-    height: 100px;
+.card_img {
+    width: 30%;
 }
 
 .card_info {

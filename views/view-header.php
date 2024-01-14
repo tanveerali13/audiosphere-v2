@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/upload-form.css">
     <link rel="stylesheet" href="../css/search.css"> 
-    <link rel="stylesheet" href="../css/audiolist.css">
+    <link rel="stylesheet" href="../css/audio-list.css">
 
 
     <!-- google font -->

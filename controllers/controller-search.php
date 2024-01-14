@@ -3,11 +3,18 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
-include __DIR__ . '/../models/model-search.php';
+include_once __DIR__ . '/../models/model-search.php';
+include __DIR__ . '/../_includes/config.php';
 
-$search = new SearchModel();
+$connectionObject = new ConnectionObject(
+    $dbConfig['host'],
+    $dbConfig['username'],
+    $dbConfig['password'],
+    $dbConfig['database']
+);
+
+$search = new SearchModel($connectionObject);
 $search->selectAudioTitles();
 $categories = $search->selectCategory();
-
 
 ?>

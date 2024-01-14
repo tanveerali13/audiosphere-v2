@@ -3,11 +3,35 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
+class ConnectionObject {
+    public function __construct(public $host, public $username, public $password, public $database) {
+    }
+}
+
 class HomeSliders {
     private $conn;
+    private $connectionObject;
+
+    public function __construct(ConnectionObject $connectionObject) {
+        $this->connectionObject = $connectionObject;
+    }
 
     public function connect() {
-        $this->conn = new mysqli("localhost", "audio_tmt", "772Fky&d7", "audiosphere");
+        try {
+            $this->conn = new mysqli(
+                $this->connectionObject->host,
+                $this->connectionObject->username,
+                $this->connectionObject->password,
+                $this->connectionObject->database
+            );
+
+            if ($this->conn->connect_error) {
+                throw new Exception('Could not connect');
+            }
+            return $this->conn;
+        } catch (Exception $e) {
+            return false;
+        }
     }
 
     public function getAudioDataForCategory($categoryId) {
@@ -39,4 +63,5 @@ class HomeSliders {
         return $categories;
     }
 }
+
 ?>

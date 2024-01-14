@@ -3,19 +3,40 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
-class AudioModel {
-    private $conn;
-
-    public function connect(){
-        $this->conn = new mysqli("localhost", "audio_tmt", "772Fky&d7", "audiosphere");
+class ConnectionObject {
+    public function __construct(public $host, public $username, public $password, public $database) {
     }
-    
+}
+
+class AudioModel {
+    private $mysqli;
+    private $connectionObject;
+
+    public function __construct(ConnectionObject $connectionObject) {
+        $this->connectionObject = $connectionObject;
+    }
+
+    public function connect() {
+        try {
+            $this->mysqli = new mysqli(
+                $this->connectionObject->host,
+                $this->connectionObject->username,
+                $this->connectionObject->password,
+                $this->connectionObject->database
+            );
+
+            if ($this->mysqli->connect_error) {
+                throw new Exception('Could not connect');
+            }
+            return $this->mysqli;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
 
     public function uploadAudio($audioFile, $title, $description, $thumbnailFile, $userID, $categoryID) {
-        //hardcoded userID
-        
         $this->connect();
-        // Upload audio file in separate directory and get file directory to store in table
+
         $audioFileName = "../audio-uploads/" . basename($audioFile["name"]);
         move_uploaded_file($audioFile["tmp_name"], $audioFileName);
 
@@ -26,7 +47,7 @@ class AudioModel {
         }
 
         $sql = "INSERT INTO audios (audioTitle, audioDesc, audioThumb, audioFile, audioUserID, audioCategoryID) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = $this->conn->prepare($sql);
+        $stmt = $this->mysqli->prepare($sql);
         $stmt->bind_param("ssssii", $title, $description, $thumbnailFileName, $audioFileName, $userID, $categoryID);
 
         if ($stmt->execute()) {
@@ -37,26 +58,22 @@ class AudioModel {
         }
     }
 
-    public function selectCategory()
-    {   
+    public function selectCategory() {
         $this->connect();
-        if ($this->conn) {
-            $result = $this->conn->query("SELECT * FROM audioCategories");
-            while ($row = $result->fetch_assoc()) {
-                $results[] = $row;
-            }
-            $this->conn->close();
-            return $results;
-        } else {
-            return false;
+
+        $result = $this->mysqli->query("SELECT * FROM audioCategories");
+        while ($row = $result->fetch_assoc()) {
+            $results[] = $row;
         }
+
+        return $results;
     }
 
-
-    public function showCategories(){
-        include __DIR__ . '/../views/view-upload.php';
+    public function showCategories() {
+        // You can return data to the controller and let the controller handle the view.
         $categories = $this->selectCategory();
-        
+        return $categories;
     }
 }
+
 ?>

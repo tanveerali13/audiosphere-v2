@@ -41,33 +41,39 @@
   --medium-margin: 15px;
   --large-margin: 20px;
   --extra-large-margin: 30px;
+
+  /* transition */
+  --transition: all .3s;
 }
 
 section {
-  padding-bottom: 100px;
+  padding-bottom: 6.5em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-top: var(--medium-margin);
+}
+
+form {
+  width: 100%;
+  margin: 0 auto;
 }
 
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  gap: 20px;
+  align-items: center;
+  margin-bottom: var(--medium-margin);
 }
-
-.left:nth-child(1) {
-  order: 2;
-}
-
-.right:nth-child(2) {
-  order: 1;
-}
-
 
 .audio-block {
   background-color: var(--primary_color_dark);
   border-radius: 5px;
   padding: 5px 5px;
-  text-align: center;
   width: 250px;
   max-height: 170px;
 }
@@ -96,16 +102,8 @@ input {
 
 }
 
-#audioTitle {
-  width: 90%;
-}
-
-#audioDesc {
-  width: 90%;
-}
-
 textarea {
-  width: 90%;
+  width: 100%;
   border-radius: 5px;
   margin-bottom: var(--medium-margin);
   padding: 5px 5px;
@@ -161,16 +159,58 @@ textarea {
   width: 50%;
   padding: 5px 10px;
   margin-bottom: var(--medium-margin);
+  transition: var(--transition);
+}
+
+input[type="submit"],
+input[type="button"] {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  padding: var(--padding_xsmall) var(--padding_medium) var(--padding_xsmall) var(--padding_medium);
+  border-radius: 8px;
+  font-size: clamp(var(--min-text-font-size), var(--preferred-text-font-size), var(--max-text-font-size));
+  box-shadow: var(--box-shadow);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+input[type="button"] {
+  background-color: var(--primary-color);
+}
+
+#upload-btn:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: #a8d6c3;
+}
+
+.arrow-btn {
+  text-transform: capitalize;
+  font-size: 1rem;
+  margin-left: var(--margin_small);
+}
+
+.arrow-btn i {
+  transform: translateX(-5px);
+  transition: var(--transition);
+}
+
+.arrow-btn:hover i {
+  transform: translateX(0);
 }
 
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 768px) {
-  .form-grid {
-
-    grid-template-columns: 1fr 1fr;
+  section {
+    padding-bottom: 1.5em;
   }
 
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--large-margin);
+  }
 
   .thumbnail p {
     max-width: 50%;
@@ -180,4 +220,10 @@ textarea {
     max-width: 50%;
   }
 
+}
+
+@media screen and (min-width: 865px) {
+  .form-grid {
+    gap: var(--extra-large-margin);
+  }
 }

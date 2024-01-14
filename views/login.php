@@ -64,19 +64,21 @@
 
         <section class="signup-login">
             <div class="container">
-                <h1>Login</h1>
-                <h4>Please login to see your playlist</h4>
-                <form action="../views/view-myplaylist.php" method="POST">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" placeholder="Username" class="form-control" required>
+                <article class="form-wrapper">
+                    <h1>Login</h1>
+                    <h4>Please login to see your playlist</h4>
+                    <form action="../views/view-myplaylist.php" method="POST">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" placeholder="Username" class="form-control" required>
 
-                    <label for="password">Password</label>
-                    <input type="text" name="password" placeholder="Password" class="form-control" required>
+                        <label for="password">Password</label>
+                        <input type="text" name="password" placeholder="Password" class="form-control" required>
 
-                    <input type="submit" name="login" value="Login">
-                </form>
-                <p>Do you not have an account?</p>
-                <a href="signup.php" class="arrow-btn"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Signup</a>
+                        <input type="submit" name="login" value="Login">
+                    </form>
+                    <p>Do you not have an account?</p>
+                    <a href="signup.php" class="arrow-btn"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Signup</a>
+                </article>
             </div>
         </section>
     </main>

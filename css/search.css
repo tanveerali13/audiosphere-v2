@@ -308,7 +308,7 @@ body.dark-mode .card {
 
 @media screen and (min-width: 768px) {
     .card:hover {
-        background-color: var(--primary_color_dark);
+        background-color: var(--background-color-dark_mode);
         cursor: pointer;
     }
 

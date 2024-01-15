@@ -75,6 +75,14 @@
                     slidesToScroll: 1,
                     centerPadding: '10px',
                 }
+            },
+            {
+                breakpoint: 3000,
+                settings: {
+                    slidesToShow: 8,
+                    slidesToScroll: 1,
+                    centerPadding: '10px',
+                }
             }
         ]
     });

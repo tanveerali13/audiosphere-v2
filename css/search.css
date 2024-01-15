@@ -291,6 +291,11 @@ h4 a {
     color: var(--button-text-color);
 }
 
+h4 a:hover{
+    color: #eebbc3;
+}
+
+
 /* Dark mode styles */
 
 body.dark-mode h2,

@@ -83,7 +83,7 @@ form {
 }
 
 .audio-drop-label {
-  color: white;
+  color: var(--headline-color);
 }
 
 .audio-drop {

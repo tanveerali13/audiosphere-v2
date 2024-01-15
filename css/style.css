@@ -608,6 +608,60 @@ audio {
     margin-top: 20px;
 }
 
+
+/** SUCCESS PAGE **/
+
+
+#success{
+    text-align: center;
+}
+
+#success h2 {
+    color: var(--headline-color);
+    margin-bottom: var(--margin_medium);
+}
+
+#success a {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#success a:hover{
+    background-color: var(--button-text-color);
+    color: var(--headline-color-dark_mode);
+}
+
+/** FAIL PAGE **/
+
+
+#fail{
+    text-align: center;
+}
+
+#fail h2 {
+    color: var(--headline-color);
+    margin-bottom: var(--margin_medium);
+}
+
+#fail a {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#fail a:hover{
+    background-color: var(--button-text-color);
+    color: var(--headline-color-dark_mode);
+}
+
+
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 470px) {

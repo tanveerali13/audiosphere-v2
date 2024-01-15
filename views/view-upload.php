@@ -33,7 +33,7 @@ include __DIR__ . '/../controllers/controller-upload.php';
                     <div class="right">
                         <!-- MP3 Audio File Input -->
                         <div class="audio-block">
-                            <label class="audio-drop-label" for="audioFile">Drag and Drop or Click to Upload</label><br>
+                            <label class="audio-drop-label" for="audioFile">Drag and Drop or Upload Audio</label><br>
                             <div class="audio-drop-area"> 
                                 <input class= "audio-drop" type="file" id="audio" name="audio" accept="audio/mp3" required>
                             </div>

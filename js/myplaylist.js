@@ -19,7 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
             pwInput.type = 'password';
         }
     }
-    checkBox.addEventListener('change', showPW);
+    
+    if (checkBox != null ) {
+        checkBox.addEventListener('change', showPW);
+    }
 
     function audioPause() {
         playIcon.innerHTML = '<i class="fa-solid fa-circle-pause"></i>';
@@ -31,53 +34,64 @@ document.addEventListener('DOMContentLoaded', function() {
         audioPanel.classList.remove('active');
     }
 
-    playBtns.forEach(function(playBtn) {
-        playBtn.addEventListener('click', function(e) {
-            e.preventDefault();
+    if (playBtns != null) {
+        playBtns.forEach(function(playBtn) {
+            playBtn.addEventListener('click', function(e) {
+                e.preventDefault();
 
-            display.classList.add('active');
+                display.classList.add('active');
 
-            audioTitle.innerHTML = playBtn.getAttribute('title');
-            
-            audio.src = playBtn.getAttribute('audioSrc');
-            
+                audioTitle.innerHTML = playBtn.getAttribute('title');
+                
+                audio.src = playBtn.getAttribute('audioSrc');
+                
+                if (audio.paused) {
+                    audio.play();
+                    audioPause();
+                } else {
+                    audio.pause();
+                    audioPlay();
+                }
+
+                this.blur();
+            });
+        });
+    }
+
+    if (closeBtn != null) {
+        closeBtn.addEventListener('click', function() {
+            display.classList.remove('active');
+        });
+    }
+
+    if (descLinks != null) {
+        descLinks.forEach(function(descLink, index) {
+            descLink.addEventListener('click', function() {
+                descLinkIcons[index].classList.toggle('active');
+                descriptions[index].classList.toggle('active');
+            });
+        });
+    }
+
+    if (playIcon != null) {
+
+        playIcon.addEventListener('click', function() {
             if (audio.paused) {
                 audio.play();
                 audioPause();
+                
             } else {
                 audio.pause();
                 audioPlay();
             }
-
-            this.blur();
         });
-    });
-
-    closeBtn.addEventListener('click', function() {
-        display.classList.remove('active');
-    });
-
-    descLinks.forEach(function(descLink, index) {
-        descLink.addEventListener('click', function() {
-            descLinkIcons[index].classList.toggle('active');
-            descriptions[index].classList.toggle('active');
-        });
-    });
-
-    playIcon.addEventListener('click', function() {
-        if (audio.paused) {
-            audio.play();
-            audioPause();
-            
-        } else {
-            audio.pause();
-            audioPlay();
-        }
-    });
+    }
 
     // after audio ended
-    audio.addEventListener('ended', function() {
-        audioPlay();
-    });
+    if (audio != null) {
+        audio.addEventListener('ended', function() {
+            audioPlay();
+        });
+    }
 
 });

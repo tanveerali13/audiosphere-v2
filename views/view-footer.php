@@ -60,6 +60,22 @@
                     centerPadding: '10px',
                 }
             },
+            {
+                breakpoint: 1600,
+                settings: {
+                    slidesToShow: 6,
+                    slidesToScroll: 1,
+                    centerPadding: '10px',
+                }
+            },
+            {
+                breakpoint: 2000,
+                settings: {
+                    slidesToShow: 7,
+                    slidesToScroll: 1,
+                    centerPadding: '10px',
+                }
+            }
         ]
     });
 </script>

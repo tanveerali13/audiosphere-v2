@@ -312,10 +312,6 @@ body.dark-mode .card {
         cursor: pointer;
     }
 
-    .search-box {
-        width: 600px;
-    }
-
     .input-box {
         font-size: 20px;
     }

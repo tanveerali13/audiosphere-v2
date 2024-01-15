@@ -179,7 +179,7 @@ button:hover {
 
 .main {
     height: 100vh;
-    padding: var(--padding_medium);
+    padding: var(--padding_small) 0 var(--padding_large) 0;
 }
 
 
@@ -313,12 +313,8 @@ body.dark-mode .card {
 
 @media screen and (min-width: 768px) {
     .card:hover {
-        background-color: var(--primary_color_dark);
+        background-color: var(--background-color-dark_mode);
         cursor: pointer;
-    }
-
-    .search-box {
-        width: 600px;
     }
 
     .input-box {

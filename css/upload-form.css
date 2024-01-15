@@ -158,6 +158,7 @@ textarea {
 #upload-btn {
   width: 50%;
   padding: 5px 10px;
+  background-color: var(--button-color);
   margin-bottom: var(--medium-margin);
   transition: var(--transition);
 }

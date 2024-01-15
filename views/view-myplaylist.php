@@ -21,44 +21,47 @@
         $controller->signup($userid, $username, $password, $email, $image);
     } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
         $controller->login($_POST['username'], $_POST['password']);
-    } 
+    }
 
-    if ($_SESSION['loggedin'] !== true) {
-        echo "<h3 style='margin: 0 auto;'>Please login to view your playlist</h3>";
-        header('Location: ../views/login.php');
-
-    } else {
-        $userid = $_SESSION['userID'];
-
-        if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['songID'])) {
-            $controller->getSongByID($_GET['songID']);
+    if (isset($_SESSION['loggedin'])) {
+        if ($_SESSION['loggedin'] == true) {
+            $userid = $_SESSION['userID'];
     
-        } else if (isset($_GET['action']) && $_GET['action'] == 'category' && isset($_GET['categoryID'])) {
-            $controller->getAudioByCategoryID($userid, $_GET['categoryID']);
-    
-        } else {
-            if (isset($_POST['update'])) {
-                $controller->updateSong($_POST['ID'], $_POST['audioTitle'], $_POST['audioDesc'], $_FILES['audio'], $_FILES['audioThumb'], $_POST['audioCategoryID']);
-            }
-    
-            if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['songID'])) {
-                $controller->deleteSong($_GET['songID']);
-            }
-            
-            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
-                $username = $_POST["username"];
-                $password = $_POST["password"];
-                $email = $_POST["email"];
-                $image = $_FILES["image"];
+            if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['songID'])) {
+                $controller->getSongByID($_GET['songID']);
         
-                $controller->signup($userid, $username, $password, $email, $image);
-            } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
-                $controller->login($_POST['username'], $_POST['password']);
+            } else if (isset($_GET['action']) && $_GET['action'] == 'category' && isset($_GET['categoryID'])) {
+                $controller->getAudioByCategoryID($userid, $_GET['categoryID']);
+        
+            } else {
+                if (isset($_POST['update'])) {
+                    $controller->updateSong($_POST['ID'], $_POST['audioTitle'], $_POST['audioDesc'], $_FILES['audio'], $_FILES['audioThumb'], $_POST['audioCategoryID']);
+                }
+        
+                if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['songID'])) {
+                    $controller->deleteSong($_GET['songID']);
+                }
+                
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
+                    $username = $_POST["username"];
+                    $password = $_POST["password"];
+                    $email = $_POST["email"];
+                    $image = $_FILES["image"];
+            
+                    $controller->signup($userid, $username, $password, $email, $image);
+                } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
+                    $controller->login($_POST['username'], $_POST['password']);
+                }
+    
+                $controller->showUserByID($userid);
+                $controller->showAudios($userid);
             }
-
-            $controller->showUserByID($userid);
-            $controller->showAudios($userid);
+        } else {
+            unset($_SESSION['loggedin']);
         }
+    } else {
+        header('Location: login.php');
+        exit;
     }
 
 ?>

@@ -175,7 +175,12 @@
                 $query = $mysqli->query("SELECT * FROM audioUsers WHERE BINARY audioUsername = '$username' AND audioUserPass = '$password'");
                 $result = $query->fetch_assoc();
                 $mysqli->close();
-                return $result['audioUserID'];
+
+                if (isset($result)) {
+                    return $result['audioUserID'];
+                } else {
+                    return false;
+                }
             } else {
                 return false;
             }

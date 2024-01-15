@@ -98,8 +98,10 @@
                 $_SESSION['loggedin'] = true;
                 $_SESSION['userID'] = $userid;
                 header('Location: ../views/view-myplaylist.php');
+                exit;
             } else {
-                echo '<h3 id="error-msg" style="text-align: center;">Login failed</h3>';
+                $_SESSION['loggedin'] = false;
+                echo '<h3 id="error-msg" style="margin-top: 10em; text-align: center;">Login failed</h3>';
             }
         }
     }

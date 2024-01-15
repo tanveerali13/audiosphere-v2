@@ -9,6 +9,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const playIcon = document.querySelector('#play-icon');
     const audioPanel = document.querySelector('.audio-panel');
     const audioTitle = document.querySelector('.audio-panel h4');
+    const pwInput = document.querySelector('#pw-input');
+    const checkBox = document.querySelector('#checkbox');
+
+    function showPW() {
+        if (checkBox.checked) {
+            pwInput.type = 'text';
+        } else {
+            pwInput.type = 'password';
+        }
+    }
+    checkBox.addEventListener('change', showPW);
 
     function audioPause() {
         playIcon.innerHTML = '<i class="fa-solid fa-circle-pause"></i>';
@@ -68,4 +79,5 @@ document.addEventListener('DOMContentLoaded', function() {
     audio.addEventListener('ended', function() {
         audioPlay();
     });
+
 });

@@ -635,6 +635,20 @@ input[type='submit']:focus {
     box-shadow: 0 0 0 1px var(--button-color-dark_mode);
 }
 
+.check-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+input[type='checkbox'] {
+    margin-bottom: 0;
+}
+
+input[type='checkbox']:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 .signup-login p {
     margin: var(--margin_medium) 0 var(--margin_small) 0;
     font-size: var(--min-text-font-size);

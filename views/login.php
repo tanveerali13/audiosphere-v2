@@ -72,7 +72,12 @@
                         <input type="text" name="username" placeholder="Username" class="form-control" required>
 
                         <label for="password">Password</label>
-                        <input type="text" name="password" placeholder="Password" class="form-control" required>
+                        <input id="pw-input" type="password" name="password" placeholder="Password" class="form-control" required>
+                        
+                        <section class="check-wrapper">
+                            <input id="checkbox" type="checkbox">
+                            <label class="check-label" for="checkbox">Show Password</label>
+                        </section>
 
                         <input type="submit" name="login" value="Login">
                     </form>

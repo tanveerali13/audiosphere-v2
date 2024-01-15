@@ -212,6 +212,10 @@ button,
     box-shadow: var(--box-shadow);
 }
 
+.btn {
+    padding: 0.35rem var(--padding_medium);
+}
+
 /* button:hover {
     background-color: var(--secondary_color_dark);
 } */

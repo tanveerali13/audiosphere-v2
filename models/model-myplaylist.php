@@ -39,7 +39,7 @@
                 FROM audios 
                 JOIN audioCategories ON audios.audioCategoryID = audioCategories.audioCategoryID 
                 WHERE audios.audioUserID = $id 
-                ORDER BY audios.ID ASC;
+                ORDER BY audios.ID DESC;
                 ");
                 while($row = $result->fetch_assoc()) {
                     $results[] = $row;
@@ -172,7 +172,7 @@
         public function findUser($username, $password) {
             $mysqli = $this->connect();
             if($mysqli) {
-                $query = $mysqli->query("SELECT * FROM audioUsers WHERE audioUsername = '$username' AND audioUserPass = '$password'");
+                $query = $mysqli->query("SELECT * FROM audioUsers WHERE BINARY audioUsername = '$username' AND audioUserPass = '$password'");
                 $result = $query->fetch_assoc();
                 $mysqli->close();
                 return $result['audioUserID'];

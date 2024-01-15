@@ -165,7 +165,6 @@ textarea {
 
 input[type="submit"],
 input[type="button"] {
-  background-color: var(--button-color);
   color: var(--button-text-color);
   padding: var(--padding_xsmall) var(--padding_medium) var(--padding_xsmall) var(--padding_medium);
   border-radius: 8px;
@@ -176,7 +175,7 @@ input[type="button"] {
   transition: var(--transition);
 }
 
-input[type="button"] {
+#upload-btn:nth-of-type(3) {
   background-color: var(--primary-color);
 }
 

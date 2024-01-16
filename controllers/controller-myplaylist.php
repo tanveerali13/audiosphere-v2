@@ -101,7 +101,11 @@
                 exit;
             } else {
                 $_SESSION['loggedin'] = false;
+                echo '<article style="text-align: center;">';
                 echo '<h3 id="error-msg" style="margin-top: 10em; text-align: center;">Login failed</h3>';
+                echo '<p id="error-msg" style="text-align: center;">Username or password is incorrect</p>';
+                echo '<a href="../views/login.php" id="error-msg" class="arrow-btn login-btn" style="text-align: center;"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Try again</a>';
+                echo '</article>';
             }
         }
     }

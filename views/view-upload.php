@@ -33,7 +33,7 @@ include __DIR__ . '/../controllers/controller-upload.php';
                     <div class="right">
                         <!-- MP3 Audio File Input -->
                         <div class="audio-block">
-                            <label class="audio-drop-label" for="audioFile">Drag and Drop or Upload Audio</label><br>
+                            <label class="audio-drop-label" for="audioFile">Drag and Drop or Upload Audio (Size: 2MB max)</label><br>
                             <div class="audio-drop-area"> 
                                 <input class= "audio-drop" type="file" id="audio" name="audio" accept="audio/mp3" required>
                             </div>
@@ -45,11 +45,11 @@ include __DIR__ . '/../controllers/controller-upload.php';
                 <!-- Thumbnail Drop Area -->
                 <div class="thumbnail">
                     <h2>Thumbnail</h2>
-                    <p>Upload a picture that shows what’s your content is about. A good thumbnail stands out and draws listeners’ attention.</p>
+                    <p>Upload a picture that shows what’s your content is about. A good thumbnail stands out and draws listeners’ attention.<br>(Size: 2MB max)</p>
                     <div id="thumbnailDropArea" onclick="document.getElementById('thumbnailInput').click()">
                         <input type="file" id="thumbnailInput" name="audioThumb" accept="image/*" style="display: none;" onchange="displayThumbnail()" required>
                         <img id="thumbnailPreview" src="../assets/images/upload.png" alt="Thumbnail Preview">
-                    </div>
+                    </div>     
                 </div>
                 
 

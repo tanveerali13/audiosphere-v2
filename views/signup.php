@@ -87,7 +87,7 @@
                         <label for="email">Email</label>
                         <input id="email" type="email" name="email" placeholder="Email" class="form-control" required>
 
-                        <label for="image">Image</label>
+                        <label for="image">Image (Size: 2MB max)</label>
                         <input type="file" name="image" class="form-control">
 
                         <input id="signup" type="submit" name="signup" value="Signup">

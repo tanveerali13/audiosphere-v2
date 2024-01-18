@@ -187,7 +187,7 @@
         }
 
         // Signup
-        public function insertUser($userid, $username, $password, $email, $image) {
+        public function insertUser($username, $password, $email, $image) {
             if (!empty($image['tmp_name'])) {
                 $userImageName = "../thumb-uploads/" . basename($image["name"]);
                 move_uploaded_file($image["tmp_name"], $userImageName);
@@ -197,13 +197,27 @@
 
             $mysqli = $this->connect();
             if ($mysqli) {
-                $stmt = $mysqli->prepare("INSERT INTO audioUsers (audioUserID, audioUsername, audioUserPass, audioUserEmail, audioUserImage) VALUES (?, ?, ?, ?, ?)");
+                $stmt = $mysqli->prepare("INSERT INTO audioUsers (audioUsername, audioUserPass, audioUserEmail, audioUserImage) VALUES (?, ?, ?, ?)");
                 if ($stmt) {
-                    $stmt->bind_param("issss", $userid, $username, $password, $email, $userImageName);
-                    $stmt->execute();
-                    $stmt->close();
-                    $mysqli->close();
-                    return true;
+                    $stmt->bind_param("ssss", $username, $password, $email, $userImageName);
+                    try {
+                        $stmt->execute();
+                        $stmt->close();
+                        $mysqli->close();
+                        return true;
+                    } catch(Exception $e) {
+                        echo '<article style="text-align: center;">';
+                        echo '<h3 id="error-msg" style="margin-top: 10em; text-align: center;">Signup failed</h3>';
+                        if ($e->getCode() == 1062) {
+                            echo '<p id="error-msg" style="text-align: center;">User already exists</p>';
+                        } else {
+                            echo '<p id="error-msg" style="text-align: center;">Unknown error</p>';
+                        }
+                        echo '<a href="../views/signup.php" id="error-msg" class="arrow-btn login-btn" style="text-align: center;"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;Try again</a>';
+                        echo '</article>';
+                        $stmt->close();
+                        exit;
+                    }
                 } else {
                     $mysqli->close();
                     return false;

@@ -79,10 +79,10 @@
         }
 
         // Signup
-        public function signup($userid, $username, $password, $email, $image) {
+        public function signup($username, $password, $email, $image) {
             // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             $hashedPassword = $password;
-            $signup = $this->model->insertUser($userid, $username, $hashedPassword, $email, $image);
+            $signup = $this->model->insertUser($username, $hashedPassword, $email, $image);
             if ($signup) {
                 return true;
             } else {

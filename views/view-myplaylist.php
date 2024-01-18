@@ -18,7 +18,7 @@
         $password = $_POST["password"];
         $email = $_POST["email"];
         $image = $_FILES["image"];
-        $controller->signup($userid, $username, $password, $email, $image);
+        $controller->signup($username, $password, $email, $image);
     } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
         $controller->login($_POST['username'], $_POST['password']);
     }
@@ -40,17 +40,6 @@
         
                 if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['songID'])) {
                     $controller->deleteSong($_GET['songID']);
-                }
-                
-                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
-                    $username = $_POST["username"];
-                    $password = $_POST["password"];
-                    $email = $_POST["email"];
-                    $image = $_FILES["image"];
-            
-                    $controller->signup($userid, $username, $password, $email, $image);
-                } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
-                    $controller->login($_POST['username'], $_POST['password']);
                 }
     
                 $controller->showUserByID($userid);

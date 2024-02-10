@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 - AudioSphere</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <main id="top">
+        <section class="banner">
+            <article>
+                <h1>AudioSphere</h1>
+                <h3>- podcast like web app -</h3>
+                <h2>by Tanveer, Tischa and Maiko</h2>
+            </article>
+        </section>
+
+        <!-- DESCRIPTION -->
+        <section class="description">
+            <div class="container">
+                <h3>Description</h3>
+                <p class="app-desc">
+                    <b>ABOUT THE APP:</b> We want to build a simple podcast website where users will be able to listen to audios of different categories/genre and also upload their own creation too. Users will be able to look for audios according to what they like with the help of a search bar or choose for the list displayed on the homepage. An user will be able to browse through the website without creating an account but will have to register if they want to upload their own audio.<br><br>
+
+                    <b>HOMEPAGE:</b> The home page will have a layout with a list of categories and displaying thumbnails of audios available under that category with titles on them. We will be using a slider so that the user will be able to slide horizontally to explore more audios staying on the home page.<br><br>
+                    
+                    <b>MY PLAYLIST:</b> This page will be accessible only to account holders who wants to upload their files and see their playlist.<br>
+                    Creators will be able to upload, edit or delete their content from this page. They will have options to change their profile picture too. We will be adding a small "about me" section for the creator.<br><br>
+
+                    <b>SEARCH:</b> Users will be able to search for audios on this page. When they select an audio from the search list, it will redirect them to a simple audio player to listen to the chosen audio. The search page also features a list of all the available audio categories on the website. When a user selects a category, they will be redirected to the list of audios available in that specific category.<br><br>
+
+                    <b>AUDIO LIST:</b> The audio list page contains a list of audios within a particular category. In the list, there will be more details about each audio, such as a small thumbnail, title, description, and a play button to redirect the user to the audio player page for listening.<br><br>
+
+                    <b>PLAYER:</b> The player will display details of the selected audio and allow users to play, pause, fast-forward, and rewind. It will showcase a larger thumbnail of the audio, along with the title and description.<br><br>
+                    
+                    <b>UPLOAD FORM:</b> This page will be used to upload audio files. There will be fields to add title, description and thumbnail of the audio file. A drop down button will be used for choosing genre of the of the file so that we can attach it to the correct category.<br><br>
+                    
+                    <b>PROGRAMMING LANGUAGE:</b> we will be using are HTML,CSS, JavaScript and PHP to build the whole project.
+                    For back-end we will be using PHP and for database we will use phpMyAdmin. After presenting our UI/UX we will start with HTML and CSS. And then, for the database initially we are planning to use four tables (audioUsers, audios, audioGenres and audioGenreLink).<br><br>
+                    
+                    <b>WORK DISTRIBUTION:</b> We are a group of three and all of us has been very much involved with what we did so far. We discussed about the UI/UX and created a rough design in Figma. After Tischa started with the Homepage design and then we started working for our assigned tasks. Tischa later took care of front-end and modification where needed. Maiko took the responsibility for the My Playlist, Login and Sign-up (Front and Back-end). Tanveer did the Upload, Search, Audio-List, Music Player and Dynamic Homepage Sliders. More details of the work we did is described in the last section of this case study.
+                </p>
+            </div>
+        </section>
+
+        <!-- MOCKUP -->
+        <section>
+            <div class="container">
+                <h3>Mockups</h3>
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <figure class="swiper-slide">
+                        <img src="images/Iphone_13_light_mode_1.jpg" alt="">
+                    </figure>
+                    <figure class="swiper-slide">
+                        <img src="images/Iphone_13_dark_mode_1.jpg" alt="">
+                    </figure>
+                    <figure class="swiper-slide">
+                        <img src="images/Iphone_13_light_and_dark_mode.jpg" alt="">
+                    </figure>
+                    <figure class="swiper-slide">
+                        <img src="images/MacBook-Fhomepage-light-mode.jpg" alt="">
+                    </figure>
+                    <figure class="swiper-slide">
+                        <img src="images/MacBook-homepage-dark-mode.jpg" alt="">
+                    </figure>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESIGN PROCESS -->
+        <section class="design">
+            <div class="container">
+                <h3>Design Process</h3>
+                <ul>
+                    <li>Database schema and Site map</li>
+                    <figure class="frame">
+                        <a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FUDJJz5Vv11sorcEybyqTwM%2FDatabase-Schema%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3DiQhOj1KNH9XQbTDp-1" target="_blank">
+                            <img src="images/DATABASE SCHEMA & SITEMAP.jpg" alt="db schema & site map">
+                        </a>
+                    </figure>
+                </ul>
+                <ul>
+                    <li>Pseudo code</li>
+                    <figure class="frame">
+                        <a href="https://www.figma.com/file/MfssnLOWGiucSfba0ryZoC/Pseudo-Code?type=design&node-id=0%3A1&mode=design&t=QEy9AnswG0cBU3rU-1" target="_blank">
+                            <img src="images/PSEUDO CODE.jpg" alt="pseudo code">
+                        </a>
+                    </figure>
+                </ul>
+                <ul>
+                    <li>Moodboard</li>
+                    <figure class="frame">
+                        <a href="https://www.figma.com/file/m6GbKC5Q77p047f4RiC1m2/Moodboard?type=design&node-id=0%3A1&mode=design&t=q2r3XwxcdVQDCaAk-1" target="_blank">
+                            <img src="images/MOODBOARD.jpg" alt="moodboard">
+                        </a>
+                    </figure>
+                </ul>
+                <ul>
+                    <li>Wireframes and Design schema</li>
+                    <figure class="frame">
+                        <a href="https://www.figma.com/file/remVn1Wgu02DUcEffljGni/Design-Schema?type=design&node-id=0%3A1&mode=design&t=KOFBYZrlrOIEQpnO-1" target="_blank">
+                            <img src="images/Wireframes.jpg" alt="wireframes & design schema">
+                        </a>
+                    </figure>
+                </ul>
+                <ul>
+                    <li>Prototype</li>
+                    <figure class="prototype">
+                        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="500" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FLHr4eLcNo9bc0NULCZ4BSt%2FPrototype-mobile%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D1-2777%26viewport%3D415%252C414%252C0.1%26t%3D22gJ5Y3GmiPxvJpW-1%26scaling%3Dscale-down%26mode%3Ddesign%26hide-ui%3D1" allowfullscreen></iframe>
+                        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="500" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FckIKmBNFJn3x61IY12slu5%2FPrototype-desktop%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D1-2699%26viewport%3D1318%252C2473%252C0.81%26t%3D8N0b8U2iCeqKpADH-1%26scaling%3Dscale-down%26mode%3Ddesign%26hide-ui%3D1" allowfullscreen></iframe>
+                        <!-- <p>Here is <a href="https://www.figma.com/proto/xfBXQOFzxZFkQauxUDSi5a/Prototype?page-id=0%3A1&type=design&node-id=1-1263&viewport=134%2C427%2C0.11&t=j2DGvzZtdA55Q6Te-1&scaling=contain&starting-point-node-id=1%3A1263&mode=design%26hide-ui%3D1" target="_blank">the link</a> in case you need it</p>
+                        <p>Here is <a href="https://www.figma.com/proto/xfBXQOFzxZFkQauxUDSi5a/Prototype?page-id=0%3A1&type=design&node-id=1-1201&viewport=134%2C427%2C0.11&t=RzRJqNunEQztbSxo-1&scaling=contain&starting-point-node-id=1%3A911&mode=design%26hide-ui%3D1" target="_blank">the link</a> in case you need it</p> -->
+                    </figure>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PERSONA -->
+        <section class="persona-wrapper">
+            <div class="container">
+                <h3>User Persona</h3>
+                <section class="persona">
+                    <img src="images/charlie_image.jpg" alt="Charlie - Casual Listener" class="persona_image">
+                    <article class="persona_info">
+                        <h2>Charlie</h2>
+                        <h3>Casual Listener</h3>
+                        <h4>Demographic:</h4>
+                        <p> Charlie is a 28-year-old marketing professional residing in a bustling
+                            city. He's tech-savvy, constantly on the move,
+                            and values efficiency.</p>
+                        <h4>Behavior:</h4>
+                        <p> Charlie listens to podcasts during his daily commute on public transport and
+                            while working out at the gym. He prefers
+                            easily digestible content that entertains and educates simultaneously.</p>
+                        <h4>Goals:</h4>
+                        <p> He seeks a diverse range of podcasts without breaking the bank. Charlie wants an
+                            ad-free experience but has budget
+                            constraints.</p>
+                        <h4>Challenges:</h4>
+                        <p> Limited time and funds restrict his ability to opt for premium
+                            subscriptions, but he desires uninterrupted, high-quality
+                            content.</p>
+                        <h4>Needs:</h4>
+                        <p> Access to a broad library of podcasts in the free tier with occasional trials of
+                            premium content for exploration.
+                        </p>
+                    </article>
+                </section>
+                <section class="persona">
+                    <img src="images/danielle_image.jpg" alt="Charlie - Casual Listener" class="persona_image">
+                    <article class="persona_info">
+                        <h2>Danielle</h2>
+                        <h3>Dedicated Podcaster</h3>
+                        <h4>Demographic:</h4>
+                        <p> Danielle, 35, is a freelance content creator passionate about storytelling and niche topics. She lives in a suburban
+                        area and is deeply involved in the podcasting community.</p>
+                        <h4>Behavior:</h4>
+                        <p> Danielle spends hours producing her podcasts, researching content, and engaging with her audience on social media. She's
+                        always looking for ways to improve her reach and impact.</p>
+                        <h4>Goals:</h4>
+                        <p> As a content creator, she seeks platforms that offer free hosting, basic analytics, and promotion tools to showcase her
+                        work and attract sponsors.</p>
+                        <h4>Challenges:</h4>
+                        <p> Limited financial resources restrict her ability to invest in premium hosting and marketing tools, hindering her
+                        podcast's growth potential.</p>
+                        <h4>Needs:</h4>
+                        <p> Free hosting with fundamental analytics and promotional features. She'd consider an upgrade for advanced analytics,
+                        marketing tools, and wider audience reach.
+                        </p>
+                    </article>
+                </section>
+                <section class="persona">
+                    <img src="images/emily_image.jpg" alt="Charlie - Casual Listener" class="persona_image">
+                    <article class="persona_info">
+                        <h2>Emily</h2>
+                        <h3>Enthusiastic Learner</h3>
+                        <h4>Demographic:</h4>
+                        <p> Emily, 20, is a college student with an insatiable thirst for knowledge. She's studying biology and resides in a dorm on
+                        campus.</p>
+                        <h4>Behavior:</h4>
+                        <p> Emily listens to podcasts while studying, exploring new subjects beyond her curriculum, and seeks educational content
+                        that supplements her learning.</p>
+                        <h4>Goals:</h4>
+                        <p> She's on a tight budget but wants access to credible, educational content across diverse subjects to enhance her studies
+                        and personal growth.</p>
+                        <h4>Challenges:</h4>
+                        <p> Finding reliable, informative podcasts for free is challenging. Limited finances restrict her from exploring premium
+                        educational content.</p>
+                        <h4>Needs:</h4>
+                        <p> Free access to high-quality educational podcasts covering various subjects, including occasional discounts or student
+                        packages for premium content.
+                        </p>
+                    </article>
+                </section>
+            </div>
+        </section>
+
+        <!-- UI / UX EVALUATION -->
+        <section class="evaluation">
+            <div class="container">
+                <h3>UI / UX Evaluation</h3>
+                <figure class="frame">
+                    <a href="https://www.figma.com/file/T9IfuBLDY2lJfaKXspAxCK/UI%2FUX-Evaluation?type=design&node-id=0%3A1&mode=design&t=OahKo3dPkGwtZpAQ-1" target="_blank">
+                        <img src="images/UX Evaluation.jpg" alt="ui/ux evaluation">
+                    </a>
+                </figure>
+            </div>
+        </section>
+
+        <!-- USABILITY TEST -->
+        <section class="usability">
+            <div class="container">
+                <h3>Usability Description</h3>
+                <article class="frame">
+                    <p><b>Scenario 1:</b> Without registration - Only browsing -<br></p>
+                    <ul>
+                        <span>Open the app (homepage)</span>
+                        <li>Browse through homepage</li>
+                        <li>Scroll and check through the categories shown in the homepage</li>
+                        <li>If  selects any audio/thumbnail in the homepage it redirects to the player.</li>
+                    
+                        <span>Player</span>
+                        <li>User can see the details of the audio.</li>
+                        <li>User can play,pause,skip,rewind etc.</li>
+                        <li>Choose as favorite (requires registration).</li>
+                   
+                        <span>Search Page</span>
+                        <li>User can search with keywords or choose from the category list shown on the search page.</li>
+                    </ul>
+                
+                    <p><b>Scenario 2:</b> Registration required - Uploading an audio -<br></p>
+                    <ul>
+                        <span>Open the app (homepage)</span>
+                        <li>Press login/register</li>
+                        <li>Create an account</li>
+                        <li>Login</li>
+                        <li>Go to MyPodcast Page</li>
+                    
+                        <span>My Podcast Page</span>
+                        <li>Press upload button, redirects to upload form.</li>
+                        <li>Select the audio file, thumbnail, write the title, description and choose the category/genre and lastly upload.</li>
+                        <li>Check the playlist and listen to the audio to confirm the upload.</li>
+                    
+                        <span>Search Page</span>
+                        <li>Check by searching the recently uploaded audio to confirm if it is searchable and available for users.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- CONCLUSION -->
+        <section class="conclu">
+            <div class="container">
+                <h3>Summary</h3>
+                <article class="frame">
+                    <p><b>Our Objective</b><br>Our primary goal with audioSphere was to tackle challenges in the podcasting industry, focusing on discoverability, accessibility, and engagement. We set out to create a comprehensive solution that caters to the diverse needs of podcast enthusiasts while providing creators with powerful tools to expand their audience reach.</p>
+                    <br>
+                    
+                    <p><b>Features and Functionality</b></p>
+                    <span>User-Friendly Interface:</span>
+                    <p>We're proud to say that audioSphere features an intuitive and user-friendly interface. Whether you're a seasoned podcast enthusiast or a newcomer, our sleek design prioritizes content visibility, ensuring a smooth and enjoyable user experience.
+                    </p>
+
+                    <span>Search Functionality:</span>
+                    <p>One of the key indicators of user-friendliness is our powerful search functionality. Users can effortlessly find their favorite podcasts, episodes, or genres with just a few clicks. The search feature is designed to be intuitive, saving users time and providing a hassle-free experience.</p>
+
+                    <span>Accessibility for All:</span>
+                    <p>Ensuring that audioSphere is accessible to a wide audience is a fundamental aspect of user-friendliness. By offering free browsing and listening, we eliminate barriers, allowing users to explore diverse content without any restrictions. This inclusivity is a testament to our commitment to user-friendly practices.</p>
+
+                    <span>Free Browsing and Listening:</span>
+                    <p>We believe in an inclusive approach, allowing users to browse and listen to a wide array of podcasts for free. Explore diverse content without any barriers, promoting accessibility, and broadening the reach of podcasting to a wider audience.</p>
+
+                    <span>Registration-only playlist creation:</span>
+                    <p>We have introduced a special feature for users who have created an account: not only listen to audio, but also create playlists. Non-registered users can view and listen to podcasts, but creating and managing playlists is a benefit for users who create accounts.</p>
+                    <br>
+
+                    <p><b>Challenges and Solutions</b></p>
+
+                    <span>Technical Challenges - Feature Overload:</span>
+                    <p>As a team, we initially grappled with the challenge of incorporating an extensive array of features within the allotted time. To overcome this, we collectively conducted a comprehensive reassessment, prioritizing features that align closely with our users' needs. Through ongoing collaborative discussions and adherence to agile development practices, we successfully streamlined the feature set, ensuring a more focused and efficient development process.</p>
+
+                    <span>Poor Communication:</span>
+                    <p>Communication emerged as a significant pain point, leading to misunderstandings and delays within our team. Recognizing its critical importance, we implemented regular team meetings, status updates, and transparent documentation. These measures significantly improved information flow, minimizing misunderstandings and fostering a more collaborative work environment.</p>
+
+                    <span>Constant Changes Without Advising:</span>
+                    <p>We encountered a challenge related to the introduction of constant changes without proper communication. To address this, we collectively implemented a formalized change management process, ensuring that proposed modifications were well-documented and seamlessly integrated into the development pipeline.</p>
+
+                    <span>Not Listening to Others' Opinions:</span>
+                    <p>A challenge we faced was a lack of receptiveness to others' opinions, hindering the creative and collaborative process. To foster a more inclusive environment, we implemented structured feedback sessions, encouraging team members to share their opinions. This shift in culture allowed for a more dynamic exchange of ideas and ultimately contributed to better project outcomes</p>
+                    <br>
+
+                    <p><b>Conclusion</b></p>
+                    <p>audioSphere successfully addressed challenges in the podcasting industry, providing a holistic solution for both creators and listeners. Our innovative features, user-friendly interface, and emphasis on community engagement have positioned audioSphere as a leader in the evolving podcasting landscape. As we continue to evolve audioSphere, it stands as a testament to the impact of technology in enhancing and revolutionizing the podcast experience.</p>
+
+                </article>
+            </div>
+        </section>
+
+        <!-- BACK TO TOP BUTTON -->
+        <a href="#top" class="top-btn"><i class="fa-solid fa-chevron-up"></i></a>
+    </main>
+</body>
+</html>

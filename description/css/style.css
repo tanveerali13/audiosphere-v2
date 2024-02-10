@@ -1,0 +1,234 @@
+:root {
+    --primary-color: #CE4257;
+    --secondary-color: #5438A8;
+    --light-color: #F6E5E8;
+    --dark-color: #1C0E10;
+    --white: #F2F2F2;
+    --dark-gray: #333;
+    --transition: all .3s ease-in-out;
+    --gap: 1em;
+    --radius: 8px;
+    --shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+section {
+    padding: 2em 0;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+    overflow-wrap: break-word;
+}
+
+h1 {
+    font-size: 4em;
+    color: var(--primary-color);
+    margin-bottom: .05em;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 1.5em;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: var(--secondary-color);
+    margin-bottom: .5em;
+}
+
+p, li {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+ul {
+    margin-bottom: 1.5em;
+}
+
+li {
+    margin: 0 0 .5em var(--gap);
+}
+
+b {
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: #13193A;
+    text-decoration: underline;
+}
+
+.swiper {
+    height: 750px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+img, iframe {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background: url(../images/Iphone_13_light_mode_3.jpg) center/cover rgba(255, 255, 255, .6);
+    background-blend-mode: screen;
+    display: grid;
+    place-items: center;
+}
+
+.banner article {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+    color: var(--primary-color);
+}
+
+.prototype {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap);
+}
+
+.persona-wrapper .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--gap);
+}
+
+.persona-wrapper h3 {
+    grid-column: 1/-1;
+}
+
+.persona {
+    max-width: 25rem;
+    margin: 0 auto;
+    padding: 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background-color: #fff;
+}
+
+.persona_image {
+    max-width: 100%;
+    border-radius: var(--radius);
+    margin-bottom: 0.9375rem;
+    height: auto;
+}
+
+.persona_info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.persona_info h3 {
+    font-size: 1.125rem;
+    color: #666;
+    margin-bottom: 0.9375rem;
+}
+
+.persona_info h4, .persona_info p {
+    font-size: 1rem;
+    color: #252525;
+    margin-bottom: 0.3125rem;
+}
+
+.app-desc, .frame {
+    background-color: #fff;
+    border-radius: var(--radius);
+    padding: 1.5em 2em var(--gap) 2em;
+    box-shadow: var(--shadow);
+}
+
+.description {
+    padding-top: 4em;
+}
+
+.app-desc {
+    text-align: justify;
+    padding-bottom: 1.5em;
+}
+
+.frame img {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.usability p b, .conclu p b {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.usability span, .conclu span {
+    display: inline-block;
+    margin: 1em 0 .5em 0;
+    font-weight: 600;
+    color: #666;
+}
+
+.usability li {
+    font-size: 1rem;
+}
+
+.conclu p {
+    font-size: 1rem;
+}
+
+.top-btn {
+    position: fixed;
+    bottom: .5em;
+    right: .5em;
+    display: inline-block;
+    padding: 1.5em;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 1;
+}
+
+.top-btn.show {
+    opacity: 1;
+}
